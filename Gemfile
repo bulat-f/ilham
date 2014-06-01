@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "2.1.1"
+ruby '2.1.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
@@ -41,6 +41,9 @@ group :production do
 end
 
 gem 'bcrypt', '~> 3.1.7'
+
+gem 'devise'
+gem 'omniauth'
 
 # Use unicorn as the app server
 # gem 'unicorn'
