@@ -1,0 +1,17 @@
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  .form-group
+    = f.label :email
+    = f.email_field :email, autofocus: true, class: "form-control"
+
+  .form-group
+    %table.table.full-width
+      %tbody
+        %td
+          = f.label :password, class: "sr-only"
+          = f.password_field :password, autocomplete: "off", class: "form-control form-elem"
+        %td
+          = f.submit "Sign in", class: "btn btn-primary auto-width form-elem"
+
+%br
+.center
+  = render "devise/shared/links"

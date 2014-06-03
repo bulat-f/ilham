@@ -173,6 +173,18 @@ input {
   width: auto;
 }
 
+.full-width {
+  width: 100%;
+}
+
+.table {
+  padding: 16px;
+}
+
 .top {
-  margin-top: 64px;
+  margin-top: 32px;
+}
+
+.form-elem {
+  vertical-align: middle;
 }

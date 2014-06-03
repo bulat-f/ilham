@@ -1,21 +1,15 @@
-.row.top
-  .col-md-8
-    .jumbotron.center
-      %h1 Welcome!!!
-      %p Find me in app/views/pages/index.html.haml
-      = link_to "Sign In", '#', class: "btn btn-lg btn-primary"
-  .col-md-4
-    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-      .form-group
-        = f.label :email
-        = f.email_field :email, autofocus: true, class: "form-control"
-
-        = f.label :password
-        = f.password_field :password, autocomplete: "off", class: "form-control"
-
-        - if devise_mapping.rememberable?
-          %lable
-            = f.check_box :remember_me
-            = f.label :remember_me, class: "sr-only"
-        = f.submit "Sign in", class: "btn btn-primary"
-
+- if user_signed_in?
+  .row
+    .col-md-12
+      .jumbotron.center
+        %h1= "Welcome, #{ current_user.email }"
+        %p This site created for reading modern fiction lit.
+- else
+  .row.top
+    .col-md-8
+      .jumbotron.center
+        %h1 Welcome!!!
+        %p Find me in app/views/pages/index.html.haml
+        = link_to "Sign In", '#', class: "btn btn-lg btn-primary"
+    .col-md-4
+      = render 'shared/signin_form'
