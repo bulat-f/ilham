@@ -29,6 +29,10 @@ textarea {
   }
 }
 
+.navbar-blue {
+  background: rgba(220, 220, 255, 0.9);
+}
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -67,14 +71,14 @@ header {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
+  // color: #fff;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
   line-height: 1;
   &:hover {
-    color: #fff;
+    // color: #fff;
     text-decoration: none;
   }
 }
