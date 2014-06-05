@@ -173,18 +173,28 @@ input {
   width: auto;
 }
 
-.full-width {
+/* tabel */
+.flex-tabel {
   width: 100%;
 }
 
-.table {
-  padding: 16px;
+.flex-table-primary {
+  vertical-align: top;
+  width: 99%;
+  padding-right: 8px;
 }
+
+.flex-table-secondary {
+  vertical-align: top;
+  width: 1%;
+  max-width: 1%;
+}
+
 
 .top {
   margin-top: 32px;
 }
 
-.form-elem {
-  vertical-align: middle;
+.front-signin {
+  padding: 8px;
 }
