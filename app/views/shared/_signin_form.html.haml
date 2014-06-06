@@ -1,15 +1,15 @@
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
   .form-group
-    = f.label :email
+    = f.label :email, class: "sr-only"
     = f.email_field :email, autofocus: true, class: "form-control"
 
   .form-group
-    %table.table.full-width
+    %table.flex-tabel
       %tbody
-        %td
+        %td.flex-table-primary
           = f.label :password, class: "sr-only"
           = f.password_field :password, autocomplete: "off", class: "form-control form-elem"
-        %td
+        %td.flex-table-secondary
           = f.submit "Sign in", class: "btn btn-primary auto-width form-elem"
 
 %br
