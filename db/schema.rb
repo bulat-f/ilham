@@ -11,16 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140608081705) do
+ActiveRecord::Schema.define(version: 20140609112045) do
 
   create_table "fictions", force: true do |t|
     t.string   "title"
     t.text     "body"
-    t.string   "genre"
+    t.integer  "genre_id"
     t.integer  "author_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "genres", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "genres", ["name"], name: "index_genres_on_name", unique: true
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",    null: false
@@ -28,6 +36,7 @@ ActiveRecord::Schema.define(version: 20140608081705) do
     t.string   "name",                   default: "",    null: false
     t.string   "surname",                default: "",    null: false
     t.boolean  "admin",                  default: false, null: false
+    t.boolean  "writer",                 default: false, null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

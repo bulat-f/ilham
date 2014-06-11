@@ -20,4 +20,16 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  header:
+    fictions_link: "Fictions"
+    profile:
+      label: "Profile"
+      edit: "Edit profile"
+      signout: "Sign out"
+  footer:
+    about: "About"
+    help: "Help"
+  flash:
+    user:
+      not_admin: "You are not admin!"
+      not_writer: "You are not writer!"

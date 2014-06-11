@@ -3,8 +3,8 @@ class CreateFictions < ActiveRecord::Migration
     create_table :fictions do |t|
       t.string  :title
       t.text    :body
-      t.string  :genre
 
+      t.integer :genre_id
       t.integer :author_id
 
       t.timestamps
