@@ -3,7 +3,7 @@
 .row
   - if current_user && current_user.bought?(@fiction)
     .col-md-12
-      = @fiction.body
+      = markdown @fiction.body
   - else
     .col-md-11
       %p Here will be annotation

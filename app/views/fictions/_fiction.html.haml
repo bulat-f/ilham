@@ -1,8 +1,7 @@
 .panel.panel-default
   .panel-heading
     %h2.panel-title= link_to fiction.title, fiction
-    - unless without_admin_links
-      = render 'admin_links', fiction: fiction
+    = render 'fictions/admin_links', fiction: fiction
   .panel-body
     %p Здесь должно быть описание произведения
   .panel-footer
