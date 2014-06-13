@@ -1,0 +1,11 @@
+- provide(:title, @fiction.title)
+%h1= @fiction.title
+.row
+  - if current_user && current_user.bought?(@fiction)
+    .col-md-12
+      = @fiction.body
+  - else
+    .col-md-11
+      %p Here will be annotation
+    .col-md-1
+      = render 'buy'

@@ -1,9 +1,12 @@
 .row
-  .col-md-4
+  .col-md-3
     %h3
       = @user.name
       %small= @user.email
-  .col-md-4
-    %p Здесь будут отображаться купленные пользователем произведения
-  .col-md-4
+  .col-md-6
+    - if @user.fictions.empty?
+      %p Здесь будут отображаться купленные пользователем произведения
+    - else
+      = render @user.fictions, without_admin_links: true
+  .col-md-3
     %p Здесь может еще кое-что

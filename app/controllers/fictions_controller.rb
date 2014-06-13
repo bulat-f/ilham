@@ -6,6 +6,10 @@ class FictionsController < ApplicationController
     @fictions = Fiction.all
   end
 
+  def show
+    @fiction = Fiction.find(params[:id])
+  end
+
   def new
     @fiction = Fiction.new
   end
@@ -37,7 +41,9 @@ class FictionsController < ApplicationController
   end
 
   def destroy
-
+    Fiction.find(params[:id]).destroy
+    flash[:success] = "Fiction destroyed"
+    redirect_to fictions_path
   end
 
   private

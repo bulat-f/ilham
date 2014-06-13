@@ -1,2 +1,6 @@
 %h1 All Fictions
-= render @fictions
+- if current_user && current_user.admin?
+  .row
+    = link_to "New fiction", new_fiction_path, class: "btn btn-lg btn-primary"
+.row
+  = render @fictions

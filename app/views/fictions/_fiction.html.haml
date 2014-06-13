@@ -1,11 +1,10 @@
 .panel.panel-default
   .panel-heading
-    %h3.panel-title
-      = link_to fiction.title, '#'
+    %h2.panel-title= link_to fiction.title, fiction
+    - unless without_admin_links
+      = render 'admin_links', fiction: fiction
   .panel-body
     %p Здесь должно быть описание произведения
   .panel-footer
-    %span.label.label-info
-      = "Genre: #{ fiction.genre.name }"
+    = link_to "Genre: #{ fiction.genre.name }", '#', class: "label label-info"
     = link_to "Author: #{ fiction.author.email }", user_path(fiction.author), class: "label label-primary"
-    = link_to "Buy", '#', class: "btn btn-primary"

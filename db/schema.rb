@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140609112045) do
+ActiveRecord::Schema.define(version: 20140612134535) do
 
   create_table "fictions", force: true do |t|
     t.string   "title"
@@ -29,6 +29,17 @@ ActiveRecord::Schema.define(version: 20140609112045) do
   end
 
   add_index "genres", ["name"], name: "index_genres_on_name", unique: true
+
+  create_table "purchases", force: true do |t|
+    t.integer  "reader_id"
+    t.integer  "fiction_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "purchases", ["fiction_id"], name: "index_purchases_on_fiction_id"
+  add_index "purchases", ["reader_id", "fiction_id"], name: "index_purchases_on_reader_id_and_fiction_id", unique: true
+  add_index "purchases", ["reader_id"], name: "index_purchases_on_reader_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",    null: false
