@@ -1,5 +1,9 @@
 - provide(:title, @fiction.title)
-%h1= @fiction.title
+.page-header
+  %h1
+    = @fiction.title
+    %small
+      = @fiction.author.email
 .row
   - if current_user && current_user.bought?(@fiction)
     .col-md-12

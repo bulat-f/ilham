@@ -1,9 +1,10 @@
-.panel.panel-default
-  .panel-heading
-    %h2.panel-title= link_to fiction.title, fiction
-    = render 'fictions/admin_links', fiction: fiction
-  .panel-body
-    %p Здесь должно быть описание произведения
-  .panel-footer
-    = link_to "Genre: #{ fiction.genre.name }", '#', class: "label label-info"
-    = link_to "Author: #{ fiction.author.email }", user_path(fiction.author), class: "label label-primary"
+.col-md-6
+  .thumbnail
+    .caption
+      %h3
+        = link_to fiction.title, fiction
+        %small= render 'fictions/admin_links', fiction: fiction
+        %span.label.label-primary= fiction_counter
+      %p= "Здесь должно быть описание произведения #{ link_to t('label.more'), fiction, class: "label label-warning" }".html_safe
+      = link_to "Genre: #{ fiction.genre.name }", '#', class: "label label-info"
+      = link_to "Author: #{ fiction.author.email }", user_path(fiction.author), class: "label label-primary"

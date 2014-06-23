@@ -1,7 +1,7 @@
 %h2 New fiction
 .row
-  .col-md-3
-  .col-md-6
+  .col-md-2
+  .col-md-8
     = form_for(@fiction) do |f|
       .form-group
         = f.label :title
@@ -17,4 +17,4 @@
         = f.select :author_id, User.all.select{ |user| user.writer }.map{ |user| [user.email, user.id] }, class: "form-control"
       .form-group
         = f.submit "Post", class: "btn btn-lg btn-primary"
-  .col-md-3
+  .col-md-2

@@ -33,3 +33,7 @@ en:
     user:
       not_admin: "You are not admin!"
       not_writer: "You are not writer!"
+  label:
+    admin: "admin"
+    writer: "writer"
+    more: "read more"
