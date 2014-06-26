@@ -1,10 +1,10 @@
-.col-md-6
+.col-md-4
   .thumbnail
     .caption
       %h3
-        = link_to fiction.title, fiction
-        %small= render 'fictions/admin_links', fiction: fiction
-        %span.label.label-primary= fiction_counter
-      %p= "Здесь должно быть описание произведения #{ link_to t('label.more'), fiction, class: "label label-warning" }".html_safe
-      = link_to "Genre: #{ fiction.genre.name }", '#', class: "label label-info"
-      = link_to "Author: #{ fiction.author.email }", user_path(fiction.author), class: "label label-primary"
+        = fiction.title
+        %small
+          = link_to "Genre: #{ fiction.genre.name }", '#'
+          = link_to "Author: #{ fiction.author.email }", user_path(fiction.author)
+      = render 'fictions/admin_links', fiction: fiction
+      %p= "Здесь должно быть описание произведения #{ link_to t('label.more'), fiction, class: "label label-primary" }".html_safe

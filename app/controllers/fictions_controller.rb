@@ -1,9 +1,10 @@
 class FictionsController < ApplicationController
 
-  before_action :admin_user, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :admin_user,         only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @fictions = Fiction.all
+    @fiction_list = Fiction.list
   end
 
   def show
