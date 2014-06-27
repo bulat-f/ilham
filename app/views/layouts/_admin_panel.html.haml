@@ -1,0 +1,9 @@
+.navbar.navbar-default
+  .container-fluid
+    .collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li= link_to "Link 1", '#'
+        %li= link_to "Link 2", '#'
+      %a.btn.btn-primary.navbar-btn{ href: new_fiction_path }
+        %span.glyphicon.glyphicon-plus
+        = t('admin-panel.new_fiction')

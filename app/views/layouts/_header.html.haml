@@ -4,7 +4,6 @@
       = link_to "Ilham", root_path, id: "logo"
       %nav.navbar-right
         %ul.nav.nav-pills
-          %li= link_to "first link", '#'
           %li= link_to t('header.fictions_link'), fictions_path
           - if user_signed_in?
             %li.dropdown

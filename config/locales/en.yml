@@ -37,3 +37,5 @@ en:
     admin: "admin"
     writer: "writer"
     more: "read more"
+  admin-panel:
+    new-fiction: "New fiction"
