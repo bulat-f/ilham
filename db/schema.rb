@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140609112045) do
+ActiveRecord::Schema.define(version: 20140628150239) do
 
   create_table "fictions", force: true do |t|
     t.string   "title"
@@ -29,6 +29,23 @@ ActiveRecord::Schema.define(version: 20140609112045) do
   end
 
   add_index "genres", ["name"], name: "index_genres_on_name", unique: true
+
+  create_table "payments", force: true do |t|
+    t.string   "operator"
+    t.string   "paymentType"
+    t.string   "phone",       limit: 12
+    t.string   "sign"
+    t.decimal  "profit",                 precision: 10, scale: 4
+    t.decimal  "sum",                    precision: 10, scale: 4
+    t.integer  "unitpayId"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "status"
+  end
+
+  add_index "payments", ["unitpayId"], name: "index_payments_on_unitpayId", unique: true
+  add_index "payments", ["user_id"], name: "index_payments_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",    null: false

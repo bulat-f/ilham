@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :rememberable, :trackable, :validatable, :omniauthable
 
   has_many :written_fictions, foreign_key: "author_id", class_name: "Fiction", dependent: :destroy
+  has_many :payments
 
   def remember_me
     true
