@@ -7,8 +7,13 @@ Rails.application.routes.draw do
   get 'help'  => 'pages#help'
 
   resources :fictions
-  resources :users,   only: [:index, :show]
+  resources :users,     only: [:index, :show]
   resources :purchases, only: [:create]
+  resources :payments do
+    collection do
+      get 'confirm'
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

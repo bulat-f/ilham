@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_many :written_fictions, foreign_key: "author_id", class_name: "Fiction", dependent: :destroy
   has_many :purchases, foreign_key: "reader_id", class_name: "Purchase"
   has_many :fictions, through: :purchases
+  has_many :payments
 
   def remember_me
     true
