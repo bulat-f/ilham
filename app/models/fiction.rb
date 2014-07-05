@@ -3,6 +3,7 @@ class Fiction < ActiveRecord::Base
   belongs_to :genre
   has_many   :purchases
   has_many   :readers, through: :purchases
+  has_many   :payments
 
   def self.list(col = 3)
     count = self.count

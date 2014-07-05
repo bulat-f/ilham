@@ -16,7 +16,7 @@ class FictionsController < ApplicationController
   end
 
   def create
-    @fiction = current_user.written_fictions.build(fiction_params)
+    @fiction = Fiction.new(fiction_params)
     if @fiction.save
       flash[:success] = 'Fiction save!!!'
       redirect_to @fiction
@@ -50,6 +50,6 @@ class FictionsController < ApplicationController
   private
 
   def fiction_params
-    params.require(:fiction).permit(:title, :body, :genre_id, :author_id)
+    params.require(:fiction).permit(:title, :body, :genre_id, :author_id, :price)
   end
 end

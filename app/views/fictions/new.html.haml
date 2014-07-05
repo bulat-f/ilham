@@ -16,5 +16,8 @@
         = f.label :author_id
         = f.select :author_id, User.all.select{ |user| user.writer }.map{ |user| [user.email, user.id] }, class: "form-control"
       .form-group
+        = f.label :price
+        = f.text_field :price, class: "form-control"
+      .form-group
         = f.submit "Post", class: "btn btn-lg btn-primary"
   .col-md-2

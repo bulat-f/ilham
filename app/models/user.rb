@@ -14,7 +14,12 @@ class User < ActiveRecord::Base
   end
 
   def buy!(fiction)
-    self.purchases.create!(fiction_id: fiction.id)
+    if fiction.class == Fixnum
+      id = fiction
+    else
+      id = fiction.id
+    end
+    self.purchases.create!(fiction_id: id)
   end
 
   def bought?(fiction)

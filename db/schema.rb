@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140628150239) do
+ActiveRecord::Schema.define(version: 20140629140319) do
 
   create_table "fictions", force: true do |t|
     t.string   "title"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20140628150239) do
     t.integer  "author_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "price",      precision: 8, scale: 2
   end
 
   create_table "genres", force: true do |t|
@@ -42,6 +43,7 @@ ActiveRecord::Schema.define(version: 20140628150239) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "status"
+    t.integer  "fiction_id"
   end
 
   add_index "payments", ["unitpayId"], name: "index_payments_on_unitpayId", unique: true

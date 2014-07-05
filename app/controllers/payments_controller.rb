@@ -6,8 +6,12 @@ class PaymentsController < ApplicationController
   end
 
   def create
-    @payment = current_user.payments.create(sum: params[:sum])
-    redirect_to "https://unitpay.ru/pay/6493-da044?sum=#{ @payment.sum }&account=#{ @payment.id }&desc=Оплата+тестового+заказа"
+    @fiction = Fiction.find_by_id :fiction_id
+    if @fiction
+      @sum = @fiction.price
+      @payment = current_user.payments.create(fiction_id: payment_params[:fiction_id], sum: @sum)
+      redirect_to "https://unitpay.ru/pay/6493-da044?sum=#{ @payment.sum }&account=#{ @payment.id }&desc=Purchase+of+a+literary+work&hideDesc=true&"
+    end
   end
 
   def confirm
@@ -19,8 +23,13 @@ class PaymentsController < ApplicationController
                                     sign:        params[:params][:sign],
                                     profit:      params[:params][:profit],
                                     unitpayId:   params[:params][:unitpayId],
-                                   )
+                                    status:      params[:method])
         success("Success")
+      end
+
+      if @payment.status == 'pay'
+        @user = User.find_by_id(@payment.user_id)
+        @user.buy!(@payment.fiction_id)
       end
 
     else
@@ -29,6 +38,10 @@ class PaymentsController < ApplicationController
   end
 
   private
+
+  def payment_params
+    params.require(:payment).permit(:fiction_id)
+  end
 
   def error(msg)
     render json: { error: { code: -32000, message: msg } }
