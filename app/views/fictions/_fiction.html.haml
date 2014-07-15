@@ -1,10 +1,10 @@
-.col-md-4
+.col-md-4.col-sm-6
   .thumbnail
+    .fiction-header
+      %h4= fiction.title
+    = image_tag fiction.cover.thumb.url.to_s
     .caption
-      %h3
-        = fiction.title
-        %small
-          = link_to "Genre: #{ fiction.genre.name }", '#'
-          = link_to "Author: #{ fiction.author.email }", user_path(fiction.author)
+      = render 'buy', fiction: fiction
+      = link_to t('btn.more'), fiction, class: "btn btn-default"
+      %span.ribbon= fiction.price.to_s + "р."
       = render 'fictions/admin_links', fiction: fiction
-      %p= "Здесь должно быть описание произведения #{ link_to t('label.more'), fiction, class: "label label-primary" }".html_safe

@@ -4,7 +4,7 @@ class FictionsController < ApplicationController
   before_action :admin_user,         only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @fiction_list = Fiction.list
+    @fictions = Fiction.all
   end
 
   def show
@@ -50,6 +50,6 @@ class FictionsController < ApplicationController
   private
 
   def fiction_params
-    params.require(:fiction).permit(:title, :body, :genre_id, :author_id, :price)
+    params.require(:fiction).permit(:title, :body, :genre_id, :author_id, :price, :cover)
   end
 end

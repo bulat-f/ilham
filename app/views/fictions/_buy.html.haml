@@ -1,7 +1,9 @@
-- if user_signed_in? && !current_user.bought?(@fiction)
-  = form_for(current_user.payments.build(sum: 10, fiction_id: @fiction.id)) do |f|
-    %div= f.hidden_field :sum
-    %div= f.hidden_field :fiction_id
-    = f.submit "Buy", class: "btn btn-lg btn-primary auto-width"
+- unless user_signed_in?
+  = link_to t('btn.buy'), new_user_session_path, class: "btn btn-primary"
 - else
-  %p You should sign in to read fiction in this site
+  - unless current_user.bought?(fiction)
+    = form_for current_user.payments.build(fiction_id: fiction.id), html: { class: "auto-width" } do |f|
+      .hidden= f.hidden_field :fiction_id
+      = f.submit t('btn.buy'), class: "btn btn-primary auto-width"
+  - else
+    %p You should sign in to read fiction in this site

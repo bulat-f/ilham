@@ -5,6 +5,8 @@ class Fiction < ActiveRecord::Base
   has_many   :readers, through: :purchases
   has_many   :payments
 
+  mount_uploader :cover, CoverUploader
+
   def self.list(col = 3)
     count = self.count
     result = Array.new(count / col + (count % col != 0 ? 1 : 0)) { Array.new }

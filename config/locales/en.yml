@@ -33,9 +33,11 @@ en:
     user:
       not_admin: "You are not admin!"
       not_writer: "You are not writer!"
+  btn:
+    more: "Read more..."
+    buy: "Buy"
   label:
     admin: "admin"
     writer: "writer"
-    more: "read more"
   admin-panel:
     new-fiction: "New fiction"
