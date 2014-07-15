@@ -15,3 +15,5 @@ doc/
 .project
 .DS_Store
 .idea
+# Игнорирование загруженных изображений
+public/uploads/
