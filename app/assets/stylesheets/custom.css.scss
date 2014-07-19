@@ -262,9 +262,9 @@ input {
   border-color: #d9534f #d9534f #d9534f transparent;
 }
 
-/* hidden */
+/* carousel */
 
-.hidden {
-  width: 0px;
-  height: 0px;
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
 }

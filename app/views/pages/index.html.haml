@@ -7,10 +7,7 @@
 - else
   .row.top
     .col-md-8
-      .jumbotron.center
-        %h1 Welcome!!!
-        %p This site created for reading modern fiction literature
-        = link_to "Sign In", '#', class: "btn btn-lg btn-primary"
+      = render 'carousel'
     .col-md-4
       .front-signin
         = render 'shared/signin_form'
