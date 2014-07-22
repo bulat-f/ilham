@@ -37,17 +37,24 @@ end
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
+
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rvm'
 end
 
 group :production do
   gem 'pg'
-  gem 'rails_12factor'
+  gem 'unicorn'
 end
 
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'devise'
 gem 'omniauth'
+
+gem 'foreman'
 
 # Use unicorn as the app server
 # gem 'unicorn'
