@@ -114,10 +114,9 @@ namespace :deploy do
   desc 'Create symlink'
   task :symlink do
     on roles(:all) do
-      execute "rm #{release_path}/Procfile"
-      execute "ln -s #{shared_path}/Procfile #{release_path}/Procfile"
-      execute "rm #{release_path}/public/system"
-      execute "ln -s #{shared_path}/system #{release_path}/public/system"
+      execute "ln -sf #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+      execute "ln -sf #{shared_path}/Procfile #{release_path}/Procfile"
+      execute "ln -sf #{shared_path}/system #{release_path}/public/system"
     end
   end
 
