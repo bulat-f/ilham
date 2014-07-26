@@ -8,6 +8,7 @@
   %body
     = render 'layouts/header'
     = render 'layouts/admin_panel' if user_signed_in? && current_user.admin?
+    = render partial: yield(:partial) unless yield(:partial).blank?
     .container
       = render partial: 'shared/flash', flash: flash
       = yield
