@@ -46,7 +46,6 @@ end
 
 group :production do
   gem 'pg'
-  gem 'unicorn'
 end
 
 gem 'bcrypt', '~> 3.1.7'
@@ -57,7 +56,7 @@ gem 'omniauth'
 gem 'foreman'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
