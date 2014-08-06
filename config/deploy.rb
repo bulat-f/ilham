@@ -60,6 +60,20 @@ namespace :unicorn do
       execute "cd #{current_path} && bundle exec unicorn_rails -c #{current_path}/config/unicorn.rb -E production -D"
     end
   end
+
+  desc 'Restart'
+  task :restart do
+    on roles(:all) do
+      execute "kill -s USR2 `cat #{fetch(:deploy_to)}/run/unicorn.pid`"
+    end
+  end
+
+  desc 'Stop'
+  task :stop do
+    on roles(:all) do
+      execute "kill -s QUIT `cat #{fetch(:deploy_to)}/run/unicorn.pid`"
+    end
+  end
 end
 namespace :deploy do
 
@@ -73,10 +87,6 @@ namespace :deploy do
       execute "mkdir #{shared_path}/system"
 
       upload!('shared/database.yml', "#{shared_path}/config/database.yml")
-
-      slide_count.times do |i|
-        upload!("shared/slide#{i}.jpg",  "#{shared_path}/img/slide#{i}.jpg")
-      end
 
       upload!('shared/nginx.conf', "#{shared_path}/nginx.conf")
       sudo 'service nginx stop'
@@ -102,6 +112,14 @@ namespace :deploy do
     end
   end
 
+  desc 'Upload images'
+  task :upload_img do
+    on roles(:all) do
+      slide_count.times do |i|
+        upload!("shared/slide#{i}.jpg",  "#{shared_path}/img/slide#{i}.jpg")
+      end
+    end
+  end
 
   desc 'Restart application'
   task :restart do
@@ -114,6 +132,7 @@ namespace :deploy do
   after :finishing, 'deploy:restart'
 
   after :updating, 'deploy:symlink'
+  after :updating, 'deploy:upload_img'
 
   before :setup, 'deploy:starting'
   before :setup, 'deploy:updating'
