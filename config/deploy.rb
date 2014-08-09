@@ -129,7 +129,6 @@ namespace :deploy do
   after :finishing, 'deploy:restart'
 
   after :updating, 'deploy:symlink'
-  after :updating, 'deploy:upload_img'
 
   before :setup, 'deploy:starting'
   before :setup, 'deploy:updating'
