@@ -1,0 +1,10 @@
+= form_for [fiction, episode] do |f|
+  .form-group
+    = f.hidden_field :fiction_id
+    = f.label :title
+    = f.text_field :title, class: "form-control"
+  .form-group
+    = f.label :body
+    = f.text_area :body, class: "form-control"
+  .form-group
+    = f.submit "Post", class: "btn btn-lg btn-primary"

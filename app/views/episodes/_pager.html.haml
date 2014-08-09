@@ -1,0 +1,5 @@
+%ul.pager
+  %li{ class: "previous#{" disabled" if episode.prev.nil?}" }
+    = link_to t('pager.episode.prev').html_safe, prev_episode_link(episode)
+  %li{ class: "next#{" disabled" if episode.next.nil?}" }
+    = link_to t('pager.episode.next').html_safe, next_episode_link(episode)

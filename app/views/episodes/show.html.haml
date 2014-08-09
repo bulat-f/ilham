@@ -1,0 +1,8 @@
+- provide(:title, "#{@fiction.title} | #{@episode.title}")
+%h1
+  = @fiction.title
+  %small
+    = @episode.title
+= render 'pager', episode: @episode
+%p= markdown @episode.body
+= render 'pager', episode: @episode

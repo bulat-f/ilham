@@ -4,6 +4,7 @@ class Fiction < ActiveRecord::Base
   has_many   :purchases
   has_many   :readers, through: :purchases
   has_many   :payments
+  has_many   :episodes
 
   mount_uploader :cover, CoverUploader
 

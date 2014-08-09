@@ -3,12 +3,13 @@ class FictionsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :admin_user,         only: [:new, :create, :edit, :update, :destroy]
 
+  before_action :find_fiction,       only: [:show, :edit, :update, :destroy]
+
   def index
     @fictions = Fiction.all
   end
 
   def show
-    @fiction = Fiction.find(params[:id])
   end
 
   def new
@@ -27,11 +28,9 @@ class FictionsController < ApplicationController
   end
 
   def edit
-    @fiction = Fiction.find(params[:id])
   end
 
   def update
-    @fiction = Fiction.find(params[:id])
     if @fiction.update_attributes(fiction_params)
       flash[:success] = "Fiction's atribute are updated"
       redirect_to @fiction
@@ -42,7 +41,7 @@ class FictionsController < ApplicationController
   end
 
   def destroy
-    Fiction.find(params[:id]).destroy
+    @fiction.destroy
     flash[:success] = "Fiction destroyed"
     redirect_to fictions_path
   end
@@ -51,5 +50,9 @@ class FictionsController < ApplicationController
 
   def fiction_params
     params.require(:fiction).permit(:title, :body, :genre_id, :author_id, :price, :cover)
+  end
+
+  def find_fiction
+    @fiction = Fiction.find(params[:id])
   end
 end

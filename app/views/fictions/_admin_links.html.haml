@@ -1,4 +1,0 @@
-- if current_user && current_user.admin?
-  .btn-group.btn-group-xs
-    = link_to "Edit", edit_fiction_path(fiction), class: "btn btn-primary"
-    = link_to "Remove", fiction_path(fiction), method: :delete, class: "btn btn-danger", data: { confirm: "You sure?" }

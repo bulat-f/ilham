@@ -40,4 +40,13 @@ en:
     admin: "admin"
     writer: "writer"
   admin-panel:
-    new-fiction: "New fiction"
+    new_fiction: "New fiction"
+    edit_fiction: "Edit this fiction"
+    delete_fiction: "Remove this fiction"
+    new_episode: "New episode"
+    edit_episode: "Edit this episode"
+    delete_episode: "Delete this episode"
+  pager:
+    episode:
+      prev: "&larr; Prev"
+      next: "Next &rarr;"

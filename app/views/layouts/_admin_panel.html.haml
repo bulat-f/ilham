@@ -1,9 +1,28 @@
 .navbar.navbar-default
   .container-fluid
     .collapse.navbar-collapse
-      %ul.nav.navbar-nav
-        %li= link_to "Link 1", '#'
-        %li= link_to "Link 2", '#'
-      %a.btn.btn-primary.navbar-btn{ href: new_fiction_path }
+      = link_to new_fiction_path, class: "btn btn-primary navbar-btn" do
         %span.glyphicon.glyphicon-plus
         = t('admin-panel.new_fiction')
+      = link_to '#', class: "btn btn-default navbar-btn navbar-right" do
+        %span.glyphicon.glyphicon-info-sign
+        = t('admin-panel.statistics')
+      - if controller_name == 'fictions'
+        - if action_name == 'show'
+          = link_to edit_fiction_path(params[:id]), class: "btn btn-info navbar-btn" do
+            %span.glyphicon.glyphicon-pencil
+            = t('admin-panel.edit_fiction')
+          = link_to fiction_path(params[:id]), method: :delete, class: "btn btn-danger navbar-btn", data: { confirm: "You sure?" } do
+            %span.glyphicon.glyphicon-trash
+            = t('admin-panel.delete_fiction')
+          = link_to new_fiction_episode_path(params[:id]), class: "btn btn-primary navbar-btn" do
+            %span.glyphicon.glyphicon-plus-sign
+            = t('admin-panel.new_episode')
+      - if controller_name == 'episodes'
+        - if action_name == 'show'
+          = link_to edit_fiction_episode_path(params[:fiction_id], params[:id]), class: "btn btn-info navbar-btn" do
+            %span.glyphicon.glyphicon-pencil
+            = t('admin-panel.edit_episode')
+          = link_to fiction_episode_path(params[:fiction_id], params[:id]), method: :delete, class: "btn btn-danger navbar-btn", data: { confirm: "You sure?" } do
+            %span.glyphicon.glyphicon-trash
+            = t('admin-panel.delete_episode')

@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140713104341) do
+ActiveRecord::Schema.define(version: 20140807070930) do
+
+  create_table "episodes", force: true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.integer  "fiction_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "episodes", ["fiction_id"], name: "index_episodes_on_fiction_id"
 
   create_table "fictions", force: true do |t|
     t.string   "title"

@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   get 'about' => 'pages#about'
   get 'help'  => 'pages#help'
 
-  resources :fictions
+  resources :fictions do
+    resources :episodes
+  end
   resources :users,     only: [:index, :show]
   resources :purchases, only: [:create]
   resources :payments do
