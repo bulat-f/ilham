@@ -106,9 +106,6 @@ namespace :deploy do
     on roles(:all) do
       execute "ln -sf #{shared_path}/config/database.yml #{release_path}/config/database.yml"
       execute "ln -sf #{shared_path}/system #{release_path}/public/system"
-      slide_count.times do |i|
-        execute "ln -sf #{shared_path}/img/slide#{i}.jpg #{release_path}/public/slide#{i}.jpg"
-      end
     end
   end
 
@@ -116,7 +113,7 @@ namespace :deploy do
   task :upload_img do
     on roles(:all) do
       slide_count.times do |i|
-        upload!("shared/slide#{i}.jpg",  "#{shared_path}/img/slide#{i}.jpg")
+        upload!("public/slide#{i}.jpg",  "#{release_path}/public/slide#{i}.jpg")
       end
     end
   end
