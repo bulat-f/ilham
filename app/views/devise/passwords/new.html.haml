@@ -3,6 +3,7 @@
 .row
   .col-xs-0.col-md-4
   .col-xs-12.col-md-4
+    = render "devise/shared/links"
     = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
       .form-group
         = devise_error_messages!
@@ -11,8 +12,4 @@
         = f.email_field :email, autofocus: true, class: "form-control"
 
         = f.submit "Send me reset password instructions", class: "btn btn-primary"
-
-    %br
-    .center
-      = render "devise/shared/links"
   .col-xs-0.col-md-4

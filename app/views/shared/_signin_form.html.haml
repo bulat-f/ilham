@@ -1,3 +1,4 @@
+= render "devise/shared/links"
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
   .form-group
     = f.label :email, class: "sr-only"
@@ -11,6 +12,3 @@
           = f.password_field :password, autocomplete: "off", class: "form-control"
         %td.flex-table-secondary
           = f.submit "Sign in", class: "btn btn-primary auto-width"
-
-.center
-  = render "devise/shared/links"

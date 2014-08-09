@@ -16,4 +16,6 @@
                 %li.divider
                 %li= link_to t('header.profile.signout'), destroy_user_session_path, :method => :delete
           - else
-            %li= link_to "Log in", new_user_session_path
+            %li
+              = link_to '#', data: {toggle: "modal", target: "#loginModal"} do
+                = t('log_in')

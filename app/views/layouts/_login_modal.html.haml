@@ -1,0 +1,12 @@
+#loginModal.modal.fade{ role: "dialog", tabindex: "-1", aria: { hidden: "true", labelledby: "loginModalLabel" } }
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{ type: "button", data: { dismiss: "modal" } }
+          %span{ aria: { hidden: "true" } } ×
+          %span.sr-only Close
+        %h4#loginModalLabel.modal-title Modal title
+      .modal-body
+        = render 'shared/signin_form'
+      .modal-footer
+        %button.btn.btn-default{ type: "button", data: { dismiss: "modal" } } Close
