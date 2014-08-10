@@ -120,9 +120,9 @@ namespace :deploy do
 
   desc 'Create symlinks for images'
   task :symlink_img do
-    on roles(:alil) do
+    on roles(:all) do
       slide_count.times do |i|
-        execute "ln -sf #{shared_path}/img/slide#{i} #{release_path}/public/slide#{i}"
+        execute "ln -sf #{shared_path}/img/slide#{i}.jpg #{current_path}/public/slide#{i}.jpg"
       end
     end
   end
