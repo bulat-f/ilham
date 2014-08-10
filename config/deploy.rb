@@ -113,7 +113,16 @@ namespace :deploy do
   task :upload_img do
     on roles(:all) do
       slide_count.times do |i|
-        upload!("public/slide#{i}.jpg",  "#{release_path}/public/slide#{i}.jpg")
+        upload!("public/slide#{i}.jpg",  "#{shared_path}/img/slide#{i}.jpg")
+      end
+    end
+  end
+
+  desc 'Create symlinks for images'
+  task :symlink_img do
+    on roles(:alil) do
+      slide_count.times do |i|
+        execute "ln -sf #{shared_path}/img/slide#{i} #{release_path}/public/slide#{i}"
       end
     end
   end
@@ -129,6 +138,7 @@ namespace :deploy do
   after :finishing, 'deploy:restart'
 
   after :updating, 'deploy:symlink'
+  after :updating, 'deploy:symlink_img'
 
   before :setup, 'deploy:starting'
   before :setup, 'deploy:updating'
