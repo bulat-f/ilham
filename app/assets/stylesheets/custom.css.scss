@@ -286,3 +286,30 @@ input {
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 16px;
 }
+
+.carousel-caption blockquote {
+  border-left: none;
+}
+
+.carousel-caption blockquote p::before {
+  color: #aaa;
+  font-size: 4em;
+  content: open-quote;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+.carousel-caption blockquote small {
+  color: #ddd;
+}
+
+.carousel-caption p {
+  font-size: 1.25em;
+}
+
+/* Prose */
+p.prose {
+  text-indent: 4em;
+  text-align: justify;
+}

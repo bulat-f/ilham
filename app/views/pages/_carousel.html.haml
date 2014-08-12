@@ -10,16 +10,23 @@
       %img{:alt => "...", :src => "slide0.jpg", class: "center-block"}
         .carousel-caption
           %h1
-            Рәхим итегез!!!
+            Хөрмәтле милләттәш!
           %p
-            This site created for reading modern fiction literature
+            Сине «Хәят» интернет әдәби журналы сәламли!
+          = link_to about_path, class: "btn btn-primary" do
+            Сайт хакында
+            %span.glyphicon.glyphicon-chevron-right
     .item
       %img{:alt => "...", :src => "slide1.jpg", class: "center-block"}
         .carousel-caption
-          %h1
+          %blockquote
+            %p
+              Әгәр дә сез китаплар һәм шигырьләр укымасагыз, бу тормыштагы иң бәхетсез кеше булыр идегез
+            %small
+              Уолт Дисней
+          = link_to for_readers_path, class: "btn btn-primary" do
             Әдәбият сөючеләр өчен
-          %p
-            Уку һәм укудан тәм алу өчен иң уңайлы ресурс
+            %span.glyphicon.glyphicon-chevron-right
     .item
       %img{:alt => "...", :src => "slide2.jpg", class: "center-block"}
         .carousel-caption

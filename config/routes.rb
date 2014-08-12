@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   devise_for :users
   root 'pages#index'
 
-  get 'about' => 'pages#about'
-  get 'help'  => 'pages#help'
+  get 'about'       => 'pages#about'
+  get 'for_readers' => 'pages#for_readers'
+  get 'for_writers' => 'pages#for_writers'
+  get 'help'        => 'pages#help'
 
   resources :fictions do
     resources :episodes
