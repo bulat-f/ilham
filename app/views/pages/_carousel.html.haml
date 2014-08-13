@@ -32,9 +32,9 @@
         .carousel-caption
           %h1
             Язучылар өчен
-          %p
-            Без язучыларга уңайлы шартлар тудырырга тырыштык
-          = link_to "Тулырак мәглүмат", about_path, class: "btn btn-primary"
+          = link_to for_writers_path, class: "btn btn-primary" do
+            Тулырак мәгълүмат
+            %span.glyphicon.glyphicon-chevron-right
   / Controls
   %a.left.carousel-control{"data-slide" => "prev", :href => "#index-carousel", :role => "button"}
     %span.glyphicon.glyphicon-chevron-left
