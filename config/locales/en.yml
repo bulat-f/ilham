@@ -29,6 +29,8 @@ en:
       signout: "Sign out"
   footer:
     about: "About"
+    for_readers: "For readers"
+    for_writers: "For writers"
     help: "Help"
   flash:
     user:

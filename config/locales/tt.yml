@@ -29,6 +29,8 @@ tt:
       signout: "Чыгарга"
   footer:
     about: "Сайт хакында"
+    for_readers: "Укучылар өчен"
+    for_writers: "Язучылар өчен"
     help: "Ярдәм"
   flash:
     user:
