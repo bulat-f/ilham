@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic,cyrillic-ext);
+@import url(http://fonts.googleapis.com/css?family=Alex+Brush);
 @import url(http://fonts.googleapis.com/css?family=Comfortaa&subset=latin,cyrillic-ext,cyrillic);
 
 @import "bootstrap";
@@ -78,11 +78,11 @@ header {
 #logo {
   float: left;
   margin-right: 10px;
-  font-size: 1.9em;
+  font-size: 2.5em;
   letter-spacing: -1px;
-  padding-top: 9px;
-  font-family: 'Lobster', cursive;
-  font-weight: normal;
+  padding-top: 6px;
+  font-family: 'Alex Brush', cursive;
+  font-weight: bolder;
   line-height: 1;
   &:hover {
     text-decoration: none;
