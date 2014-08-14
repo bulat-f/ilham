@@ -8,7 +8,7 @@ set :rvm_type, :user
 set :rvm_ruby_version, '2.1.2'
 set :deploy_to, '/var/www/apps/ilham'
 set :rails_env, 'production'
-set :linked_dirs, %w(public/uploads)
+set :linked_dirs, %w(public/uploads public/social)
 
 slide_count = 3
 
@@ -75,7 +75,10 @@ namespace :unicorn do
       execute "kill -s QUIT `cat #{fetch(:deploy_to)}/run/unicorn.pid`"
     end
   end
+
+  after :finishing, 'deploy:restart'
 end
+
 namespace :deploy do
 
  desc 'Setup'
@@ -136,8 +139,8 @@ namespace :deploy do
   end
 
   after :finishing, 'deploy:cleanup'
-  after :finishing, 'deploy:restart'
   after :finishing, 'deploy:symlink_img'
+  after :finishing, 'unicorn:restart'
 
   after :updating, 'deploy:symlink'
 

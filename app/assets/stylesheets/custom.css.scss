@@ -96,6 +96,7 @@ footer {
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: lightGray;
+  vertical-align: middle;
 
   a {
     color: #555;
@@ -111,12 +112,24 @@ footer {
   ul {
     float: right;
     list-style: none;
+    padding-top: 6px;
       li {
         float: left;
         margin-left: 16px;
       }
   }
 }
+
+.social a {
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.social a:hover {
+  opacity: 1.0;
+}
+
+/* other */
 
 .content {
   display: block;
