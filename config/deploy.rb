@@ -8,7 +8,7 @@ set :rvm_type, :user
 set :rvm_ruby_version, '2.1.2'
 set :deploy_to, '/var/www/apps/ilham'
 set :rails_env, 'production'
-set :linked_dirs, %w(public/uploads public/social)
+set :linked_dirs, %w(public/uploads)
 
 slide_count = 3
 
@@ -76,7 +76,7 @@ namespace :unicorn do
     end
   end
 
-  after :finishing, 'deploy:restart'
+  after :restart, 'deploy:restart'
 end
 
 namespace :deploy do
