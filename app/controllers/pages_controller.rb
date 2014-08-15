@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def index
-    render layout: "index"
+    render layout: "index" unless user_signed_in?
   end
 
   def about

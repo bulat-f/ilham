@@ -1,14 +1,4 @@
 %ul.list-group
-  %li.list-group-item
-    %span.badge 8
-    Шигырьләр
-  %li.list-group-item
-    %span.badge 2
-    Хикәяләр
-  %li.list-group-item.active
-    %span.badge 3
-    Романнар
-  %li.list-group-item
-    %span.badge 0
-    Тәнгыйть
-
+  - Genre.all.each do |genre|
+    - unless genre.fictions.count.zero?
+      %li.list-group-item= t("genres.#{genre.name}")

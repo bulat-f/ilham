@@ -1,8 +1,9 @@
 .col-md-4.col-sm-6
   .thumbnail
-    .fiction-header
-      %h4= fiction.title
-    = image_tag fiction.cover.thumb.url.to_s
+    =link_to fiction_path(fiction) do
+      .fiction-header
+        %h4= fiction.title
+      = image_tag fiction.cover.thumb.url.to_s
     .caption
       = render 'buy', fiction: fiction
       = link_to t('btn.more'), fiction, class: "btn btn-default"

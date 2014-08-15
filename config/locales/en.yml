@@ -38,6 +38,7 @@ en:
       not_writer: "You are not writer!"
   btn:
     more: "Read more..."
+    read: "Read"
     buy: "Buy"
   label:
     admin: "admin"
@@ -53,3 +54,11 @@ en:
     episode:
       prev: "&larr; Prev"
       next: "Next &rarr;"
+  genres:
+    poetry: ""
+    short_story: ""
+    novella: ""
+    novel: ""
+    journalism: ""
+    criticism: ""
+    play: ""

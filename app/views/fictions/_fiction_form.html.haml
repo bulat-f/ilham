@@ -7,7 +7,7 @@
       %table.flex-table
         %td.flex-table-left
           = f.label :genre_id
-          = f.select :genre_id, Genre.all.map{ |genre| [genre.name, genre.id] }
+          = f.select :genre_id, Genre.all.map{ |genre| [t("genres.#{genre.name}"), genre.id] }
         %td.flex-table-right
           = f.label :author_id
           = f.select :author_id, User.all.select{ |user| user.writer }.map{ |user| [user.email, user.id] }, class: "form-control"

@@ -37,8 +37,9 @@ tt:
       not_admin: "You are not admin!"
       not_writer: "You are not writer!"
   btn:
-    more: "Тулырак укырга"
-    buy: "Сатып алырга"
+    more: "Тулырак"
+    read: "Укырга"
+    buy: "Түләргә"
   label:
     admin: "Админ"
     writer: "Язучы"
@@ -53,3 +54,11 @@ tt:
     episode:
       prev: "&larr; Артка"
       next: "Алга &rarr;"
+  genres:
+    poetry: "Шигырь"
+    short_story: "Хикәя"
+    novella: "Повесть"
+    novel: "Роман"
+    journalism: "Публицистика"
+    criticism: "Тәнкыйть"
+    play: "Драма"

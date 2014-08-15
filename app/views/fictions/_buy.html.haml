@@ -6,4 +6,4 @@
       .hidden= f.hidden_field :fiction_id
       = f.submit t('btn.buy'), class: "btn btn-primary auto-width"
   - else
-    %p You should sign in to read fiction in this site
+    = link_to t('btn.read'), fiction_episode_path(fiction, fiction.episodes[0]), class: "btn btn-primary"
