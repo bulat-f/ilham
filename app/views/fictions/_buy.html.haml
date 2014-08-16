@@ -6,4 +6,4 @@
       .hidden= f.hidden_field :fiction_id
       = f.submit t('btn.buy'), class: "btn btn-primary auto-width"
   - else
-    = link_to t('btn.read'), fiction_path(fiction), class: "btn btn-primary"
+    = link_to t('btn.read'), first_episode_path(fiction), class: "btn btn-primary"

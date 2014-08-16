@@ -4,5 +4,6 @@
   %small
     = @episode.title
 = render 'pager', episode: @episode
-%p= markdown @episode.body
+.prose.protected
+  = markdown @episode.body
 = render 'pager', episode: @episode

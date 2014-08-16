@@ -6,8 +6,10 @@
       = @fiction.author.email
 .row
   .col-md-3
-    = render 'i_dont_know', fiction: @fiction
-  .col-md-8
-    = markdown @fiction.body
-  .col-md-1
-    = render 'buy', fiction: @fiction
+    .row
+      = image_tag @fiction.cover.thumb.url.to_s, class: "img-thumbnail"
+    .row
+      = render 'buy', fiction: @fiction
+  .col-md-9
+    .prose
+      = markdown @fiction.body
