@@ -5,11 +5,14 @@
     %small
       = @fiction.author.email
 .row
-  .col-md-3
+  .col-md-3.col-sm-6
     .row
       = image_tag @fiction.cover.thumb.url.to_s, class: "img-thumbnail"
-    .row
-      = render 'buy', fiction: @fiction
-  .col-md-9
+    .row.stat.center
+      .col-sm-8
+        .pluso{ data: { background: "transparent", options: "medium,round,line,horizontal,nocounter,theme=04", services: "vkontakte,odnoklassniki,facebook,twitter"} }
+      .col-sm-4
+        = render 'buy', fiction: @fiction
+  .col-md-9.col-sm-6
     .prose
       = markdown @fiction.body
