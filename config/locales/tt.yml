@@ -28,7 +28,7 @@ tt:
       edit: "Профильне үзгәртү"
       signout: "Чыгарга"
   footer:
-    about: "Сайт хакында"
+    about: "Сайт турында"
     for_readers: "Укучылар өчен"
     for_writers: "Язучылар өчен"
     help: "Ярдәм"
@@ -45,7 +45,7 @@ tt:
     writer: "Язучы"
   admin-panel:
     new_fiction: "Яңа әсәр"
-    edit_fiction: "Әләрне редакцияләү"
+    edit_fiction: "Әсәрне редакцияләү"
     delete_fiction: "Әсәрне алып ташлау"
     new_episode: "Яңа эпизод"
     edit_episode: "Эпизодны үзгәртү"
