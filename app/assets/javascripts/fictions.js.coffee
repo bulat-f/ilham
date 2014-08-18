@@ -2,12 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$(document).on "page:receive", ->
-  window.pluso = null
-  window.ifpluso = null
-  return
-
-$(document).ready ->
+ready = ->
   return  if typeof window.pluso.start is "function"  if window.pluso
   if window.ifpluso is `undefined`
     window.ifpluso = 1
@@ -21,3 +16,11 @@ $(document).ready ->
     h = d[g]("body")[0]
     h.appendChild s
   return
+
+$(document).on "page:receive", ->
+  window.pluso = null
+  window.ifpluso = `undefined`
+  return
+
+$(document).ready(ready)
+$(document).on('page:load', ready)

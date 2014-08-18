@@ -9,10 +9,11 @@
     .row
       = image_tag @fiction.cover.thumb.url.to_s, class: "img-thumbnail"
     .row.stat.center
-      .col-sm-8
-        .pluso{ data: { background: "transparent", options: "medium,round,line,horizontal,nocounter,theme=04", services: "vkontakte,odnoklassniki,facebook,twitter"} }
-      .col-sm-4
-        = render 'buy', fiction: @fiction
+      .panel.panel-default
+        .panel-body
+          = render 'buy', fiction: @fiction
+        .panel-footer
+          = render 'shared/share'
   .col-md-9.col-sm-6
     .prose
       = markdown @fiction.body

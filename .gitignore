@@ -22,7 +22,7 @@ public/uploads/
 #
 public/*.jpg
 
-shared/
+/shared/
 
 /config/database.yml # доступ к базе данным
 /Procfile # про него я еще расскажу
