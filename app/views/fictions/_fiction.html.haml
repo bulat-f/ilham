@@ -2,7 +2,10 @@
   .thumbnail
     =link_to fiction_path(fiction) do
       .fiction-header
-        %h4= fiction.title
+        %h4
+          = fiction.title
+          %small
+            = "(#{fiction.t_genre})"
       = image_tag fiction.cover.thumb.url.to_s
     .caption
       = render 'buy', fiction: fiction

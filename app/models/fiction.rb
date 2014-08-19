@@ -18,4 +18,17 @@ class Fiction < ActiveRecord::Base
 
     return result
   end
+
+  def t_genre
+    I18n.t("genres.#{self.genre.name}")
+  end
+
+  def author_name
+    author = self.author
+    if author.name.blank? && author.surname.blank?
+      author.email
+    else
+      "#{author.surname} #{author.name}"
+    end
+  end
 end

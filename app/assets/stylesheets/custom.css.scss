@@ -251,17 +251,14 @@ input {
   font-weight: bold;
 }
 
-.fiction-header h4::before {
-  content: '"';
-}
-
-.fiction-header h4::after {
-  content: '"';
-}
-
 .fiction-header a {
   color: #fff;
   text-decoration: none;
+}
+
+.fiction-header small {
+  color: #fff;
+  text-transform: lowercase;
 }
 
 /* ribbon */
