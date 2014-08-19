@@ -6,7 +6,11 @@ class FictionsController < ApplicationController
   before_action :find_fiction,       only: [:show, :edit, :update, :destroy]
 
   def index
-    @fictions = Fiction.all
+    unless params[:genre_id].blank?
+      @fictions = Fiction.where('genre_id = ?', params[:genre_id])
+    else
+      @fictions = Fiction.all
+    end
   end
 
   def show

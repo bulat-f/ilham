@@ -55,9 +55,10 @@ en:
       prev: "&larr; Prev"
       next: "Next &rarr;"
   genres:
-    poetry: ""
-    short_story: ""
-    novella: ""
+    all: "All"
+    poetry: "Poetry"
+    short_story: "Short Story"
+    novella: "Novella"
     novel: ""
     journalism: ""
     criticism: ""

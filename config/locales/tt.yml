@@ -55,7 +55,8 @@ tt:
       prev: "&larr; Артка"
       next: "Алга &rarr;"
   genres:
-    poetry: "Шигырь"
+    all: "Барлык әсәрләр"
+    poetry: "Шигырьләр"
     short_story: "Хикәя"
     novella: "Повесть"
     novel: "Роман"

@@ -1,4 +1,8 @@
+- active = params[:genre_id]
 %ul.list-group
+  %li{ class: "list-group-item#{" active" if active.blank?}" }
+    = link_to t("genres.all"), genre_id: nil
   - Genre.all.each do |genre|
     - unless genre.fictions.count.zero?
-      %li.list-group-item= t("genres.#{genre.name}")
+      %li{ class: "list-group-item#{" active" if active.to_i == genre.id}" }
+        = link_to t("genres.#{genre.name}"), genre_id: genre.id
