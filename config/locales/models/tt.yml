@@ -1,0 +1,20 @@
+tt:
+  activerecord:
+    models:
+      user: Кулланучы
+      fiction:
+        one: Әсәр
+        other: Әсәрләр
+    attributes:
+      user:
+        surname: Фамилия
+        name: Исем
+        email: Email
+        password: Серсүз
+      fiction:
+        title: Исем
+        body: Тасфирлау
+        author_id: Автор (түбәндәге исемлектән)
+        genre_id: Жанр (түбәндәге исемлектән)
+        cover: Тышлык
+        price: Бәя
