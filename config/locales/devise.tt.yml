@@ -47,6 +47,14 @@ tt:
       send_instructions: "You will receive an email with instructions about how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions about how to unlock it in a few minutes."
       unlocked: "Your account has been unlocked successfully. Please sign in to continue."
+    links:
+      signin: "Керү"
+      sign-up: "Теркәлү"
+      forgot-password: "Парольне искә төшерү"
+    btns:
+      signin: "Керергә"
+      sign-up: "Теркәлергә"
+
   errors:
     messages:
       already_confirmed: "was already confirmed, please try signing in"
@@ -57,3 +65,4 @@ tt:
       not_saved:
         one: "1 error prohibited this %{resource} from being saved:"
         other: "%{count} errors prohibited this %{resource} from being saved:"
+
