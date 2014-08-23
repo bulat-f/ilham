@@ -1,0 +1,11 @@
+%h1.page-header Статистика
+%table.table.table-hover
+  %thead
+    %tr
+      %td #
+      %td Әсәр исеме
+      %td Бәясе
+      %td Бастырылды
+      %td Сатып алулар саны
+  %tbody
+    = render partial: 'users/fiction', collection: @fictions

@@ -26,6 +26,7 @@ en:
     profile:
       label: "Profile"
       edit: "Edit profile"
+      writer_statistics: "My statistics"
       signout: "Sign out"
   footer:
     about: "About"

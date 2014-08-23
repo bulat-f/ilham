@@ -26,6 +26,7 @@ tt:
     profile:
       label: "Профиль"
       edit: "Профильне үзгәртү"
+      writer_statistics: "Минем статистика"
       signout: "Чыгарга"
   footer:
     about: "Сайт турында"

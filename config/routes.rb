@@ -11,7 +11,11 @@ Rails.application.routes.draw do
   resources :fictions do
     resources :episodes
   end
-  resources :users,     only: [:index, :show]
+  resources :users,     only: [:index, :show] do
+    member do
+      get 'statistic'
+    end
+  end
   resources :purchases, only: [:create]
   resources :payments do
     collection do
