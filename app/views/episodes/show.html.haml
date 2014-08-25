@@ -2,8 +2,16 @@
 %h1
   = @fiction.title
   %small
-    = @episode.title
+    = @fiction.author_name
 = render 'pager', episode: @episode
-.prose.protected
-  = markdown @episode.body
+.row
+  - unless @fiction.genre.name == 'poetry'
+    .prose.protected
+      %h2= @episode.title
+      = markdown @episode.body
+  - else
+    .col-md-4.col-md-offset-4.col-sm-6.col-sm-offset-3.col-xs-12
+      .poetry.protected
+        %h3= @episode.title
+        = markdown @episode.body
 = render 'pager', episode: @episode
