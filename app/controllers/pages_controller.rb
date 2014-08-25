@@ -14,4 +14,7 @@ class PagesController < ApplicationController
 
   def help
   end
+
+  def unitpay
+  end
 end
