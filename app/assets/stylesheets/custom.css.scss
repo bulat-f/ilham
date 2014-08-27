@@ -14,7 +14,7 @@ html {
 }
 
 body {
-  padding-top: 55px;
+  padding-top: 60px;
 }
 
 body#index {
@@ -46,6 +46,13 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
+  a {
+    color: inherit;
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 
 h1 {

@@ -1,8 +1,8 @@
-- provide(:title, "#{@fiction.title} | #{@episode.title}")
+- provide(:title, @fiction.title)
 %h1
-  = @fiction.title
+  = link_to @fiction.title, fiction_path(@fiction)
   %small
-    = @fiction.author_name
+    = link_to @fiction.author_name, user_path(@fiction.author)
 = render 'pager', episode: @episode
 .row
   - unless @fiction.genre.name == 'poetry'
