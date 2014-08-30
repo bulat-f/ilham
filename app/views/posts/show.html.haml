@@ -1,7 +1,7 @@
 .page-header
   %h1= @post.title
 .row.center
-  = image_tag @post.cover.thumb.url.to_s, class: "img-rounded center-block"
+  = image_tag @post.cover.large.url.to_s, class: "img-rounded center-block"
   = render 'shared/share'
 .row
   = @post.body.html_safe
