@@ -31,5 +31,7 @@ module Ilham
     I18n.enforce_available_locales = true
     config.i18n.default_locale = :tt
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+
+    config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
   end
 end

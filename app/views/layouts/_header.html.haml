@@ -6,6 +6,7 @@
         %ul.nav.nav-pills
           %li= link_to "Временная ссылка для UnitPay", unitpay_path, style: 'font-weight: bolder; font-size: 1.1em;'
           %li= link_to t('header.fictions_link'), fictions_path
+          %li= link_to t('header.posts_link'), posts_path
           - if user_signed_in?
             %li.dropdown
               %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}

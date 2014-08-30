@@ -352,3 +352,13 @@ input {
 .active a {
   color: #fff;
 }
+
+.desc {
+  a {
+    color: inherit;
+    &:hover {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+}

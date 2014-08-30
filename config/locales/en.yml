@@ -22,6 +22,7 @@
 en:
   header:
     fictions_link: "Fictions"
+    posts_link: "Posts"
     signin: "Log in"
     profile:
       label: "Profile"
@@ -46,6 +47,7 @@ en:
     writer: "writer"
   admin-panel:
     new_fiction: "New fiction"
+    new_post: "New post"
     edit_fiction: "Edit this fiction"
     delete_fiction: "Remove this fiction"
     new_episode: "New episode"

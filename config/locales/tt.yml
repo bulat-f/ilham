@@ -22,6 +22,7 @@
 tt:
   header:
     fictions_link: "Әсәрләр"
+    posts_link: "Уңыш остаханәсе"
     signin: "Керергә"
     profile:
       label: "Профиль"
@@ -46,6 +47,7 @@ tt:
     writer: "Язучы"
   admin-panel:
     new_fiction: "Яңа әсәр"
+    new_post: "Яңа мәкалә"
     edit_fiction: "Әсәрне редакцияләү"
     delete_fiction: "Әсәрне алып ташлау"
     new_episode: "Яңа эпизод"

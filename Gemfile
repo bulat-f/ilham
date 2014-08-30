@@ -22,6 +22,8 @@ gem 'redcarpet'
 gem 'mini_magick'
 gem 'carrierwave' # Uploader
 
+gem 'ckeditor'
+
 group :doc do
   gem 'sdoc', '~> 0.4.0'
 end
