@@ -28,7 +28,7 @@ class Fiction < ActiveRecord::Base
     if author.name.blank? && author.surname.blank?
       author.email
     else
-      "#{author.surname} #{author.name}"
+      "#{author.name} #{author.surname}"
     end
   end
 end

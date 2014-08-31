@@ -15,5 +15,5 @@
         .panel-footer
           = render 'shared/share'
   .col-md-9.col-sm-6
-    .prose
+    %div{ class: "#{@fiction.genre.poetry? ? "poetry" : "prose"}" }
       = markdown @fiction.body
