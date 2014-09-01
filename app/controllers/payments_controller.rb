@@ -6,11 +6,11 @@ class PaymentsController < ApplicationController
   end
 
   def create
-    @fiction = Fiction.find_by_id :fiction_id
+    @fiction = Fiction.find_by_id payment_params[:fiction_id]
     if @fiction
       @sum = @fiction.price
       @payment = current_user.payments.create(fiction_id: payment_params[:fiction_id], sum: @sum)
-      redirect_to "https://unitpay.ru/pay/6493-da044?sum=#{ @payment.sum }&account=#{ @payment.id }&desc=Purchase+of+a+literary+work&hideDesc=true&"
+      redirect_to "https://unitpay.ru/pay/9133-38f19?sum=#{ @payment.sum }&account=#{ @payment.id }&desc=Purchase+of+a+literary+work&hideDesc=true&"
     end
   end
 
