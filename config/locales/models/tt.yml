@@ -9,8 +9,9 @@ tt:
       user:
         surname: Фамилия
         name: Исем
-        email: Email
+        email: E-mail
         password: Серсүз
+        password_confirmation: Серсүзне кабатлагыз
       fiction:
         title: Исем
         body: Тасфирлау
@@ -18,3 +19,10 @@ tt:
         genre_id: Жанр (түбәндәге исемлектән)
         cover: Тышлык
         price: Бәя
+      episode:
+        title: Исем (яки буш калдыра аласыз)
+        body: Эпизод
+      post:
+        title: Исеме
+        description: Тасфирлау
+        body: Мәкалә
