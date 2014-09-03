@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :authenticate_user!, only: [:statistic]
+  before_action :authenticate_user!, only: [:statistic, :lib]
   before_action :writer_user,        only: [:statistic]
   before_action :current_user?,      only: [:statistic]
 
@@ -14,6 +14,10 @@ class UsersController < ApplicationController
 
   def statistic
     @fictions = @current_user.written_fictions
+  end
+
+  def lib
+    @fictions = current_user.fictions
   end
 
   private

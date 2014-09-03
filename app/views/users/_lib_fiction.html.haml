@@ -1,0 +1,10 @@
+.media
+  = link_to fiction_path(lib_fiction), class: "pull-left" do
+    = image_tag lib_fiction.cover.thumb.url.to_s, class: "img-thumbnail", size: size == :small ? "150x100" : nil
+  .media-body
+    %h3.media-heading
+      = link_to "#{lib_fiction.title} (#{lib_fiction.t_genre})", fiction_path(lib_fiction)
+    = link_to lib_fiction.author_name, lib_fiction.author
+    %div{ class: "#{lib_fiction.genre.poetry? ? "poetry" : "prose"}" }
+      = markdown truncate(lib_fiction.body, length: size == :small ? 200 : 400)
+    = link_to t('btn.more'), lib_fiction, class: "btn btn-default"

@@ -1,8 +1,28 @@
 - if user_signed_in?
   .row
-    .col-md-12
-      .jumbotron.center
-        %h1= "Welcome, #{ current_user.email }"
-        %p This site created for reading modern fiction literature
+    .col-md-6
+      .page-header
+        %h1= link_to "Минем китапханә", lib_user_path(current_user)
+      -if @fictions.empty?
+        .jumbotron.center
+          %h3 Сез әлегә бер әсәр дә сатып алмагансыз
+          %hr
+          = link_to "Әсәр сатып алырга", fictions_path, class: "btn btn-lg btn-primary"
+      -else
+        = render partial: 'users/lib_fiction', collection: @fictions, locals: { :size => :small }
+        %hr
+        .center
+          = link_to lib_user_path(current_user), class: "btn btn-lg btn-default" do
+            Китапханәгә күчергә
+            %span.glyphicon.glyphicon-chevron-right
+    .col-md-6
+      .page-header
+        %h1= link_to "Уңыш остаханәсе", posts_path
+      = render partial: 'users/post', collection: @posts
+      %hr
+      .center
+        = link_to posts_path, class: "btn btn-lg btn-default" do
+          Остаханәгә күчергә
+          %span.glyphicon.glyphicon-chevron-right
 - else
   - provide(:partial, 'pages/carousel')

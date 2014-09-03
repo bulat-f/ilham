@@ -1,17 +1,11 @@
 .row
   .col-md-3
     %h3
-      = "#{ @user.surname} #{ @user.name }"
-      %small
-        = @user.email
-        -if @user.admin?
-          %span.label.label-success= t('label.admin')
-        -if @user.writer?
-          %span.label.label-success= t('label.writer')
+      = "#{ @user.name} #{ @user.surname }"
+    -if @user.admin?
+      %span.label.label-success= t('label.admin')
+    -if @user.writer?
+      %span.label.label-success= t('label.writer')
   .col-md-6
-    - if @user.fictions.empty?
-      %p Здесь будут отображаться купленные пользователем произведения
-    - else
-      = render @user.fictions, without_admin_links: true
   .col-md-3
     %p Здесь может еще кое-что

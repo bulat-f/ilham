@@ -13,6 +13,8 @@
                 = t('header.profile.label')
                 %span.caret
               %ul.dropdown-menu
+                %li= link_to t('header.profile.my'), current_user
+                %li= link_to t('header.profile.lib'), lib_user_path(current_user)
                 %li= link_to t('header.profile.edit'), edit_user_registration_path(current_user)
                 - if current_user.writer?
                   %li= link_to t('header.profile.writer_statistics'), statistic_user_path(current_user)

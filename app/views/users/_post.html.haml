@@ -1,0 +1,8 @@
+.media
+  = link_to post_path(post), class: "pull-left" do
+    = image_tag post.cover.thumb.url.to_s, class: "img-thumbnail", size: "150x100"
+  .media-body
+    %h3.media-heading
+      = link_to post.title, post_path(post)
+    %p.desc
+      = link_to post.description, post_path(post)

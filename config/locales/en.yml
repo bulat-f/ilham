@@ -26,6 +26,8 @@ en:
     signin: "Log in"
     profile:
       label: "Profile"
+      my: "My profile"
+      lib: "My lib"
       edit: "Edit profile"
       writer_statistics: "My statistics"
       signout: "Sign out"

@@ -26,6 +26,8 @@ tt:
     signin: "Керергә"
     profile:
       label: "Профиль"
+      my: "Минем прифиль"
+      lib: "Минем китапханә"
       edit: "Профильне үзгәртү"
       writer_statistics: "Минем статистика"
       signout: "Чыгарга"
