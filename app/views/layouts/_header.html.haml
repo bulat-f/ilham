@@ -4,7 +4,6 @@
       = link_to "Khayat", root_path, id: "logo"
       %nav.navbar-right
         %ul.nav.nav-pills
-          %li= link_to "Временная ссылка для UnitPay", unitpay_path, style: 'font-weight: bolder; font-size: 1.1em;'
           %li= link_to t('header.fictions_link'), fictions_path
           %li= link_to t('header.posts_link'), posts_path
           - if user_signed_in?
@@ -22,5 +21,5 @@
                 %li= link_to t('header.profile.signout'), destroy_user_session_path, :method => :delete
           - else
             %li
-              = link_to '#', data: {toggle: "modal", target: "#loginModal"} do
+              = link_to '#', data: {toggle: "modal", target: "#loginModal"}, style: 'font-weight: bolder' do
                 = t('header.signin')

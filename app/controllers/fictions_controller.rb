@@ -7,9 +7,9 @@ class FictionsController < ApplicationController
 
   def index
     unless params[:genre_id].blank?
-      @fictions = Fiction.where('genre_id = ?', params[:genre_id])
+      @fictions = Fiction.order(:created_at => :desc).where('genre_id = ?', params[:genre_id])
     else
-      @fictions = Fiction.all
+      @fictions = Fiction.order(:created_at => :desc).all
     end
   end
 

@@ -20,6 +20,6 @@ class PagesController < ApplicationController
   def help
   end
 
-  def unitpay
+  def about_rus
   end
 end

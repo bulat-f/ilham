@@ -1,12 +1,12 @@
 class PostsController < ApplicationController
-  
+
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :admin_user,         only: [:new, :create, :edit, :update, :destroy]
 
   before_action :find_post,          only: [:show, :edit, :update, :destroy]
 
   def index
-    @posts = Post.all
+    @posts = Post.order(:created_at => :desc).all
   end
 
   def show
