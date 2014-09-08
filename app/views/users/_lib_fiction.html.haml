@@ -7,4 +7,5 @@
     = link_to lib_fiction.author_name, lib_fiction.author
     %div{ class: "#{lib_fiction.genre.poetry? ? "poetry" : "prose"}" }
       = markdown truncate(lib_fiction.body, length: size == :small ? 200 : 400)
+    = link_to t('btn.read'), first_episode_path(lib_fiction), class: "btn btn-info"
     = link_to t('btn.more'), lib_fiction, class: "btn btn-default"
