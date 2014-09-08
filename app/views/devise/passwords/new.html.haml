@@ -1,5 +1,3 @@
-%h2 Forgot your password?
-
 .row
   .col-xs-0.col-md-4
   .col-xs-12.col-md-4
@@ -11,5 +9,5 @@
         = f.label :email
         = f.email_field :email, autofocus: true, class: "form-control"
 
-        = f.submit "Send me reset password instructions", class: "btn btn-primary"
+        = f.submit t('btn.send_password'), class: "btn btn-primary"
   .col-xs-0.col-md-4

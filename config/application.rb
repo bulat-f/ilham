@@ -33,5 +33,16 @@ module Ilham
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
 
     config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
+
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+      :address              => "smtp.gmail.com",
+      :port                 => 587,
+      :domain               => 'khayat.ru',
+      :user_name            => 'khayatweb@gmail.com',
+      :password             => 'INeedSuccess',
+      :authentication       => 'plain',
+      :enable_starttls_auto => true
+    }
   end
 end

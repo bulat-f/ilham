@@ -44,6 +44,8 @@ en:
     more: "Read more..."
     read: "Read"
     buy: "Buy"
+    send_password: "Send reset password instruction"
+    change_password: "Change My Password"
   label:
     admin: "admin"
     writer: "writer"
