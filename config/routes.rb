@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'for_readers' => 'pages#for_readers'
   get 'for_writers' => 'pages#for_writers'
   get 'help'        => 'pages#help'
-  get 'about_rus'     => 'pages#about_rus'
+  get 'about_rus'   => 'pages#about_rus'
 
   resources :fictions do
     resources :episodes
