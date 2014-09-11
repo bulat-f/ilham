@@ -1,0 +1,11 @@
+.page-header
+  %h1= "Барлык кулланучылар (#{@users.count})"
+%table.table.table-hover
+  %thead
+    %tr
+      %td #
+      %td Исеме
+      %td E-mail
+      %td Теркәлде
+  %tbody
+    = render @users
