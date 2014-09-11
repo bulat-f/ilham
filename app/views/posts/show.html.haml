@@ -1,7 +1,7 @@
 - provide(:title, @post.title)
 - content_for :head do
-  %meta{ property: "og:description", content: truncate(@post.body.html_safe, length: 100) }
-  %meta{ name: "description", content: truncate(@post.body.html_safe, length: 100) }
+  %meta{ property: "og:description", content: truncate(@post.body.html_safe, length: 128) }
+  %meta{ name: "description", content: truncate(@post.body.html_safe, length: 128) }
 .page-header
   %h1= @post.title
 .row.center
