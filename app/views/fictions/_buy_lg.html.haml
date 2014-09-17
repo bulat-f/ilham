@@ -1,0 +1,7 @@
+- unless user_signed_in?
+  = link_to t('btn.buy'), new_user_session_path, class: "btn btn-lg btn-default"
+- else
+  - unless current_user.bought?(fiction)
+    = form_for current_user.payments.build(fiction_id: fiction.id), html: { class: "auto-width" } do |f|
+      .hidden= f.hidden_field :fiction_id
+      = f.submit t('btn.buy'), class: "btn btn-lg btn-default auto-width"
