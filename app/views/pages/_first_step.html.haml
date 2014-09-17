@@ -1,0 +1,18 @@
+.row#first-step
+  .page-header.center
+    %h3 1. Сайтта теркәлү
+.row
+  - unless user_signed_in?
+    .col-xs-12.col-sm-6.col-md-8.col-lg-9
+      %p Әсәрне тулысынча укыр өчен сезгә башта сайтта теркәлергә кирәк. Сез моны шушы биттә үк башкара аласыз.
+      %p= "Әгәрдә сез сайтта теркәлгән булсагыз сезгә #{link_to "үзегезнең аккаунтыгызга керегә кирәк", '#', data: { toggle: "modal", target: "#loginModal" }}.".html_safe
+    .col-xs-12.col-sm-6.col-md-4.col-lg-3
+      = render 'shared/signup_form'
+  - else
+    .col-sm-12.center
+      %h4 Сез беренче адым - теркәлүне - уңышлы башкардыгыз =)
+
+.row
+  %h1
+    = link_to '#second-step', class: "scrollto" do
+      %span.glyphicon.glyphicon-chevron-down
