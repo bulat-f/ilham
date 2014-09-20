@@ -1,4 +1,4 @@
 .page-header
   %h1 Уңыш остаханәсе
 .row
-  = render @posts
+  = render partial: 'posts_row', collection: @posts.each_slice(3).to_a
