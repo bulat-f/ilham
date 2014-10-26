@@ -9,6 +9,16 @@ class User < ActiveRecord::Base
   has_many :fictions, through: :purchases
   has_many :payments
 
+  scope :writers, -> { where(writer: true) }
+
+  def to_s
+    if self.name.blank? && self.surname.blank?
+      self.email
+    else
+      "#{self.name} #{self.surname}"
+    end
+  end
+
   def remember_me
     true
   end

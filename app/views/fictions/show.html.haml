@@ -1,12 +1,12 @@
 - provide(:title, @fiction.title)
 - content_for :head do
-  %meta{ property: "og:description", content: truncate(markdown(@fiction.body), length: 128) }
-  %meta{ name: "description", content: truncate(markdown(@fiction.body), length: 128) }
+  %meta{ property: "og:description", content: truncate(strip_tags(@fiction.body.html_safe), length: 128) }
+  %meta{ name: "description", content: truncate(strip_tags(@fiction.body.html_safe), length: 128) }
 .page-header
   %h1
     = @fiction.title
     %small
-      = @fiction.author_name
+      = @fiction.author
 .row
   .col-md-3.col-sm-6
     .row

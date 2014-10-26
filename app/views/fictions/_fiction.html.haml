@@ -5,7 +5,7 @@
         %h4
           = fiction.title
           %small
-            = "(#{fiction.t_genre})"
+            = "(#{fiction.genre})"
       = image_tag fiction.cover.thumb.url.to_s
     .caption
       = render 'buy', fiction: fiction

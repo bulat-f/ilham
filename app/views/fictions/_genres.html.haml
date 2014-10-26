@@ -5,4 +5,4 @@
   - Genre.all.each do |genre|
     - unless genre.fictions.count.zero?
       %li{ class: "list-group-item#{" active" if active.to_i == genre.id}" }
-        = link_to t("genres.#{genre.name}"), genre_id: genre.id
+        = link_to genre, genre_id: genre.id

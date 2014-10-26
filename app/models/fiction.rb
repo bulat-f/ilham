@@ -8,16 +8,4 @@ class Fiction < ActiveRecord::Base
 
   mount_uploader :cover, CoverUploader
 
-  def t_genre
-    I18n.t("genres.#{self.genre.name}")
-  end
-
-  def author_name
-    author = self.author
-    if author.name.blank? && author.surname.blank?
-      author.email
-    else
-      "#{author.name} #{author.surname}"
-    end
-  end
 end
