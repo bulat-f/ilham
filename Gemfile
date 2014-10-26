@@ -24,6 +24,9 @@ gem 'carrierwave' # Uploader
 
 gem 'ckeditor'
 
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
+
 group :doc do
   gem 'sdoc', '~> 0.4.0'
 end

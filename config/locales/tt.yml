@@ -20,6 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 tt:
+  prev_page: "Алдагы бит"
+  next_page: "Киләсе бит"
   header:
     fictions_link: "Әсәрләр"
     posts_link: "Уңыш остаханәсе"
