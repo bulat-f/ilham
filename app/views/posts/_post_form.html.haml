@@ -16,5 +16,12 @@
   .row
     .col-md-12
       .form-group
+        = f.label :tag_list
+        = f.text_field :tag_list, class: "form-control"
+  .row
+    .col-md-12
+      .form-group
         = f.label :body
         = f.cktext_area :body
+  .form-group
+    = f.submit "Post", class: "btn btn-lg btn-default"
