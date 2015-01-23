@@ -2,7 +2,6 @@
   .thumbnail
     =link_to post_path(post) do
       = image_tag post.cover.thumb.url.to_s, class: "img-rounded"
-    .caption
+    .caption.desc
       %h3= link_to post.title, post
-      %p.desc
-        = link_to post.description, post_path(post)
+      %p= link_to post.description, post

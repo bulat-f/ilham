@@ -10,6 +10,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @similars = @post.similar(6)
   end
 
   def new

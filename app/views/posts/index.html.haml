@@ -1,6 +1,6 @@
 .page-header
   %h1 Уңыш остаханәсе
 .row
-  = render partial: 'posts_row', collection: @posts.each_slice(3).to_a
+  = render partial: 'row', collection: @posts.each_slice(3).to_a
 .row.center
-  = will_paginate @posts, :previous_label => t('prev_page'), :next_label => t('next_page')
+  = will_paginate @posts, previous_label: t('prev_page'), next_label: t('next_page')

@@ -9,3 +9,9 @@
   = render 'shared/share'
 .row
   = @post.body.html_safe
+- unless @similars.empty?
+  .row
+    %h3.text-center.page-header Охшаган мәкаләләр
+    = render partial: 'col', collection: divide_into_col(@similars), as: :similars
+
+

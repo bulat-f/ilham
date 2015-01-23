@@ -1,0 +1,8 @@
+%li.media
+  .media-left
+    = link_to similar do
+      = image_tag similar.cover.thumb.url.to_s, class: 'media-object img-sm'
+  .media-body.desc
+    = link_to similar do
+      %h4.media-heading= similar.title
+      %p= similar.description
