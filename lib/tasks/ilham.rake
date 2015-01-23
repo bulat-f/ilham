@@ -11,4 +11,11 @@ namespace :ilham do
     user = User.first
     user.update_attribute(:admin, true) if user
   end
+
+  desc "Resize images witch uploaded with carrierwave"
+  task resize: :environment do
+    Post.all.each do |post|
+      post.cover.recreate_versions!
+    end
+  end
 end

@@ -2,10 +2,10 @@
 - content_for :head do
   %meta{ property: "og:description", content: truncate(strip_tags(@post.body.html_safe), length: 128) }
   %meta{ name: "description", content: truncate(strip_tags(@post.body.html_safe), length: 128) }
-.page-header
-  %h1= @post.title
 .row.center
-  = image_tag @post.cover.large.url.to_s, class: "img-rounded center-block"
+  %h1= @post.title
+  .post-cover
+    = image_tag @post.cover.to_s, class: "img-rounded center-block"
   = render 'shared/share'
 .row
   = @post.body.html_safe
