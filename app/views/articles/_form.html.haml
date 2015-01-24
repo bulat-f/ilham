@@ -1,0 +1,28 @@
+= form_for article do |f|
+  .row
+    .col-md-8
+      .form-group
+        = f.label :title
+        = f.text_field :title, class: "form-control"
+    .col-md-4
+      .form-group
+        = f.label :picture
+        = f.file_field :picture, class: "form-control"
+  .row
+    .col-md-12
+      .form-group
+        = f.label :description
+        = f.text_area :description, class: "form-control"
+  .row
+    .col-md-12
+      .form-group
+        = f.label :body
+        = f.cktext_area :body
+  .row
+    .col-md-8
+      .form-group
+        = f.label :category_id
+        = f.select :category_id, Category.all.map{ |genre| [genre, genre.id] }
+    .col-md-4
+      .form-group
+        = f.submit t('view.article.form.submit'), class: "btn btn-lg btn-default"

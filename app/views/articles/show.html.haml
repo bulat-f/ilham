@@ -1,0 +1,8 @@
+%h1= @article.title
+.row
+  = image_tag @article.picture
+.row
+  = raw @article.body
+- unless @article.published
+  .row
+    = render 'publish', article: @article

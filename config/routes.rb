@@ -26,6 +26,13 @@ Rails.application.routes.draw do
   end
 
   resources :posts
+  resources :articles do
+    collection do
+      get :admin
+      post :publish
+    end
+  end
+  resources :categories
 
   mount Ckeditor::Engine => '/ckeditor'
 

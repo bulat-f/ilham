@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :purchases, foreign_key: "reader_id", class_name: "Purchase"
   has_many :fictions, through: :purchases
   has_many :payments
+  has_many :articles
 
   scope :writers, -> { where(writer: true) }
 

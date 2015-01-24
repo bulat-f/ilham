@@ -23,14 +23,16 @@ en:
   prev_page: "Prev page"
   next_page: "Next page"
   header:
-    fictions_link: "Fictions"
-    posts_link: "Posts"
+    fictions: "Fictions"
+    posts: "Posts"
+    articles: "Articles"
     signin: "Log in"
     profile:
       label: "Profile"
       my: "My profile"
       lib: "My lib"
       edit: "Edit profile"
+      new-article: "New article"
       writer_statistics: "My statistics"
       signout: "Sign out"
   footer:
@@ -72,3 +74,18 @@ en:
     journalism: ""
     criticism: ""
     play: ""
+  view:
+    article:
+      page-header:
+        index: Index
+        new: New
+        edit: Edit
+      form:
+        submit: Submit
+    category:
+      page-header:
+        index: Index
+        new: New
+        edit: Edit
+      form:
+        submit: Submit

@@ -1,0 +1,11 @@
+%li.media
+  .media-left
+    = link_to article do
+      = image_tag article.picture.thumb.url.to_s, width: 256, class: 'media-object'
+  .media-body.desc
+    = link_to article do
+      %h4.media-heading
+        = article.title
+        %small= article.user
+      %small= article.updated_at
+      %p= article.description

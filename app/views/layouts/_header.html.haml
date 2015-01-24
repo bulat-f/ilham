@@ -4,8 +4,9 @@
       = link_to "Khayat", root_path, id: "logo"
       %nav.navbar-right
         %ul.nav.nav-pills
-          %li= link_to t('header.fictions_link'), fictions_path
-          %li= link_to t('header.posts_link'), posts_path
+          %li= link_to t('header.fictions'), fictions_path
+          %li= link_to t('header.posts'), posts_path
+          %li= link_to t('header.articles'), articles_path
           - if user_signed_in?
             %li.dropdown
               %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
@@ -15,6 +16,7 @@
                 %li= link_to t('header.profile.my'), current_user
                 %li= link_to t('header.profile.lib'), lib_user_path(current_user)
                 %li= link_to t('header.profile.edit'), edit_user_registration_path(current_user)
+                %li= link_to t('header.profile.new-article'), new_article_path
                 - if current_user.writer?
                   %li= link_to t('header.profile.writer_statistics'), statistic_user_path(current_user)
                 %li.divider

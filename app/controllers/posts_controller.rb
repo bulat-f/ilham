@@ -33,10 +33,10 @@ class PostsController < ApplicationController
 
   def update
     if @post.update_attributes(post_params)
-      flash[:success] = "Post's atribute are updated"
+      flash[:success] = "Post's atributes are updated"
       redirect_to @post
     else
-      flash.now[:warning] = "post's atributes are not correct"
+      flash.now[:warning] = "Post's atributes are not correct"
       render 'edit'
     end
   end

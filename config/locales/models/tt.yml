@@ -27,3 +27,9 @@ tt:
         description: Тасфирлау
         tag_list: Теглар (өтер аша)
         body: Мәкалә
+      article:
+        title: Исеме
+        picture: Сурәт
+        description: Тасфирлау
+        body: Мәкалә
+        category_id: Категория
