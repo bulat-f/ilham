@@ -1,9 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Alex+Brush);
 @import url(http://fonts.googleapis.com/css?family=Comfortaa&subset=latin,cyrillic-ext,cyrillic);
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
-
 @mixin box_sizing {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -18,10 +15,6 @@ body {
   padding-top: 60px;
 }
 
-body#index {
-  padding-top: 0px;
-}
-
 section {
   overflow: auto;
 }
@@ -32,6 +25,7 @@ textarea {
 
 .center {
   text-align: center;
+  position: relative;
   h1 {
     margin-bottom: 10px;
   }
@@ -241,138 +235,11 @@ input {
   padding: 8px;
 }
 
-/* fiction header in index page overview */
-
-.fiction-header {
+.title {
   position: absolute;
-  top: 5px;
-  min-width: 32%;
-  max-width: 85%;
-  padding: 0px 5px 0px 5px;
-  z-index: 450;
-  background: rgba(0, 0, 0, 0.7);
+  right: 0px;
+  left: 0px;
+  padding: 0px 10px;
+  background: rgba(0, 0, 0, 0.8);
   color: #fff;
-  font-family: 'Comfortaa', cursive;
-}
-
-.fiction-header h1, h2, h3, h4, h5, h6 {
-  font-weight: bold;
-}
-
-.fiction-header a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.fiction-header small {
-  color: #fff;
-  text-transform: lowercase;
-}
-
-/* ribbon */
-
-.ribbon {
-  float: right;
-  position: relative;
-  background: #d9534f;
-  color: #fff;
-  margin: 0 -22px 0 0;
-  padding: 2px 8px 0 16px;
-  font-weight: bold;
-  height: 26px;
-}
-
-.ribbon::after {
-  content: '';
-  position: absolute;
-  border-style: solid;
-  border-color: transparent;
-  bottom: -8px;
-  border-width: 0 0 8px 8px;
-  border-left-color: #622;
-  right: 0;
-}
-
-.ribbon::before {
-  content: ' ';
-  position: absolute;
-  left: -13px;
-  top: 0px;
-  border-width: 13px 13px;
-  border-style: solid;
-  border-color: #d9534f #d9534f #d9534f transparent;
-}
-
-/* carousel */
-
-.carousel-caption {
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 16px;
-}
-
-.carousel-caption blockquote {
-  border-left: none;
-}
-
-.carousel-caption blockquote p::before {
-  color: #aaa;
-  font-size: 4em;
-  content: open-quote;
-  line-height: 0.1em;
-  margin-right: 0.25em;
-  vertical-align: -0.4em;
-}
-
-.carousel-caption blockquote small {
-  color: #ddd;
-}
-
-.carousel-caption p {
-  font-size: 1.25em;
-}
-
-/* Prose */
-.prose p {
-  text-indent: 2em;
-  text-align: justify;
-}
-
-.poetry {
-  p {
-    margin-bottom: 1em;
-  }
-  h3 {
-    margin-bottom: 1em;
-  }
-
-  blockquote {
-    margin-left: 20%;
-    font-size: 0.95em;
-  }
-}
-
-.stat {
-  padding-top: 4px;
-}
-
-.active a {
-  color: #fff;
-}
-
-.desc {
-  a {
-    color: inherit;
-    &:hover {
-      color: inherit;
-      text-decoration: none;
-    }
-  }
-}
-
-.help-item {
-  padding-top: 32px;
-}
-
-.pay-item {
-  padding-top: 64px;
 }

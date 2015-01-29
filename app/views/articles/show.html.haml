@@ -1,7 +1,19 @@
-%h1= @article.title
-.row
-  = image_tag @article.picture
+- provide(:title, @article.title)
+- content_for :head do
+  %meta{ property: "og:description", content: truncate(strip_tags(@article.body.html_safe), length: 128) }
+  %meta{ name: "description", content: truncate(strip_tags(@article.body.html_safe), length: 128) }
+.row.center
+  .title
+    %h1= @article.title
+  .cover
+    = image_tag @article.picture, class: "img-rounded center-block"
+  = render 'shared/share'
 .row
   = raw @article.body
+.row
+  %p.text-right
+    %strong= @article.user
+    %br
+    = @article.published_at
 - if can?(:publish, @article) && @article.unpublished
   = render 'publish', article: @article

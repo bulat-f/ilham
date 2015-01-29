@@ -1,3 +1,55 @@
-// Place all the styles related to the pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#index-carousel {
+  margin-top: -60px;
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+}
+
+.carousel-caption blockquote {
+  border-left: none;
+}
+
+.carousel-caption blockquote p::before {
+  color: #aaa;
+  font-size: 4em;
+  content: open-quote;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+.carousel-caption blockquote small {
+  color: #ddd;
+}
+
+.carousel-caption p {
+  font-size: 1.25em;
+}
+
+.stat {
+  padding-top: 4px;
+}
+
+.active a {
+  color: #fff;
+}
+
+.desc {
+  a {
+    color: inherit;
+    &:hover {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+}
+
+.help-item {
+  padding-top: 32px;
+}
+
+.pay-item {
+  padding-top: 64px;
+}

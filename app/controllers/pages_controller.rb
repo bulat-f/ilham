@@ -1,8 +1,6 @@
 class PagesController < ApplicationController
   def index
-    unless user_signed_in?
-      render layout: "index"
-    else
+    if user_signed_in?
       @fictions = current_user.fictions.take(3)
       @posts = Post.order(:created_at => :desc).first(3)
     end

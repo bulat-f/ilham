@@ -17,4 +17,8 @@ class Article < ActiveRecord::Base
     self.published = true
     self.save
   end
+
+  def published_at
+    updated_at.to_date
+  end
 end
