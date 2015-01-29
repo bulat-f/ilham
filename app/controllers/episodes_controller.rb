@@ -1,6 +1,6 @@
 class EpisodesController < ApplicationController
 
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:show, :new, :create, :edit, :update, :destroy]
   before_action :admin_user,         only: [:new, :create, :edit, :update, :destroy]
 
   before_action :find_fiction,       only: [:index, :show, :new, :edit, :update, :destroy]

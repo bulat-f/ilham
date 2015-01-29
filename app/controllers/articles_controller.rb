@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
 
   before_action :find_article, only: [:show, :edit, :update, :destroy, :publish]
+  load_and_authorize_resource
 
   def index
     @articles = Article.published.paginate(page: params[:page])

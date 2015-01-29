@@ -9,6 +9,10 @@ class Article < ActiveRecord::Base
   scope :published,   -> { where(published: true) }
   scope :unpublished, -> { where(published: false) }
 
+  def unpublished
+    !published
+  end
+
   def publish
     self.published = true
     self.save
