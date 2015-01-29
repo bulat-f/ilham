@@ -1,6 +1,8 @@
 class Article < ActiveRecord::Base
   mount_uploader :picture, PictureUploader
 
+  validates :title, :description, :body, presence: true
+
   belongs_to :user
   belongs_to :category
 
