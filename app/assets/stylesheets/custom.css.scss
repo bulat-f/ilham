@@ -111,7 +111,7 @@ footer {
     float: left;
   }
 
-  ul {
+  ul.right {
     float: right;
     list-style: none;
     padding-top: 6px;
@@ -122,13 +122,12 @@ footer {
   }
 }
 
-.social a {
-  text-decoration: none;
-  opacity: 0.8;
-}
-
-.social a:hover {
-  opacity: 1.0;
+ul.social {
+  line-height: 1.8em;
+  a {
+    text-decoration: none;
+    opacity: 0.8;
+  }
 }
 
 /* other */
