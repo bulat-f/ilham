@@ -82,6 +82,8 @@ en:
         edit: Edit
       form:
         submit: Submit
+      panel:
+        new: Article publish after admin confirm this action.
     category:
       page-header:
         index: Index
