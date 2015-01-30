@@ -1,5 +1,5 @@
 # config valid only for Capistrano 3.1
-lock '3.2.1'
+lock '3.3.5'
 
 set :repo_url, 'git@bitbucket.org:fatbulat/ilham.git'
 set :application, 'ilham'
