@@ -6,10 +6,7 @@
     = link_to article do
       %h4.media-heading
         = article.title
-        %small= link_to 'Edit', edit_article_path(article)
-        %small= article.user
-      %small= article.updated_at
+        %small= article.author
+      %small= article.published_at
       %p= article.description
-    %p
-      = render 'publish', article: article
-
+    = render 'publish', article: article

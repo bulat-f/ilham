@@ -6,6 +6,12 @@
     = link_to article do
       %h4.media-heading
         = article.title
-        %small= article.user
+        %small= article.author
+      - unless article.source.blank?
+        %p.label.label-primary
+          = link_to article.source do
+            = article.host
+            %i.fa.fa-external-link
+        %br
       %small= article.published_at
       %p= article.description

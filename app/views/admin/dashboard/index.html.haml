@@ -1,0 +1,65 @@
+%h1= t '.title'
+.row
+  .col-md-3
+    .panel.panel-primary
+      .panel-heading
+        .row
+          .col-xs-4
+            %i.fa.fa-pencil.fa-5x
+          .col-xs-8
+            %h3
+              = t '.items.new-article.heading'
+              %span.badge= @published_articles_count
+      .panel-footer
+        = link_to new_admin_article_path do
+          .item
+            %span
+              = t '.items.new-article.footer'
+              %i.fa.fa-arrow-right
+
+  .col-md-3
+    .panel.panel-info
+      .panel-heading
+        .row
+          .col-xs-4
+            %i.fa.fa-list.fa-5x
+          .col-xs-8
+            %h3
+              = t '.items.unpublished-articles.heading'
+              %small.badge= @unpublished_articles_count
+      .panel-footer
+        = link_to admin_articles_path do
+          .item
+            %span
+              = t '.items.unpublished-articles.footer'
+              %i.fa.fa-arrow-right
+  .col-md-3
+    .panel.panel-success
+      .panel-heading
+        .row
+          .col-xs-4
+            %i.fa.fa-users.fa-5x
+          .col-xs-8
+            %h3
+              = t '.items.users.heading'
+              %span.badge= @users_count
+      .panel-footer
+        = link_to users_path do
+          .item
+            %span
+              = t '.items.users.footer'
+              %i.fa.fa-arrow-right
+  .col-md-3
+    .panel.panel-warning
+      .panel-heading
+        .row
+          .col-xs-4
+            %i.fa.fa-rub.fa-5x
+          .col-xs-8
+            %h3= t '.items.finances.heading'
+      .panel-footer
+        = link_to '#' do
+          .item
+            %span
+              = t '.items.finances.footer'
+              %i.fa.fa-arrow-right

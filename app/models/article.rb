@@ -11,6 +11,19 @@ class Article < ActiveRecord::Base
   scope :published,   -> { where(published: true) }
   scope :unpublished, -> { where(published: false) }
 
+  def author
+    named = read_attribute(:author)
+    if named.blank?
+      user.to_s
+    else
+      named
+    end
+  end
+
+  def host
+    URI.parse(source).host unless source.blank?
+  end
+
   def unpublished
     !published
   end

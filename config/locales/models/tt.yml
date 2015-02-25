@@ -12,6 +12,7 @@ tt:
         email: E-mail
         password: Серсүз
         password_confirmation: Серсүзне кабатлагыз
+        current_password: Серсүз
       fiction:
         title: Исем
         body: Тасфирлау

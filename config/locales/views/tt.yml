@@ -1,0 +1,31 @@
+tt:
+  users:
+    show:
+      title: Кулланучылар
+  devise:
+    registrations:
+      edit:
+        title: Профильне үзгәртү
+        btns:
+          save: Сакларга
+  articles:
+    index:
+      btns:
+        create: Мәкалә язарга
+  admin:
+    dashboard:
+      index:
+        title: Администратор булмэсе
+        items:
+          new-article:
+            heading: Яна мэкалэлэр
+            footer: Мэкалэ язырга
+          unpublished-articles:
+            heading: Басылмаган мэкалэлэр
+            footer: Бастрырырга
+          users:
+            heading: Кулланучылар
+            footer: Исемлек
+          finances:
+            heading: Финанслар
+            footer: Статитсика

@@ -1,10 +1,9 @@
-class ArticlesController < ApplicationController
+class Admin::ArticlesController < Admin::AdminController
 
   before_action :find_article, only: [:show, :edit, :update, :destroy, :publish]
-  load_and_authorize_resource
 
   def index
-    @articles = Article.published.paginate(page: params[:page])
+    @articles = Article.unpublished.paginate(page: params[:page])
   end
 
   def show
@@ -18,6 +17,7 @@ class ArticlesController < ApplicationController
     @article = current_user.articles.build(article_params)
     if @article.save
       flash[:success] = 'Article a created'
+      @article.publish
       redirect_to @article
     else
       flash[:warning] = 'Article did not create'
@@ -41,10 +41,15 @@ class ArticlesController < ApplicationController
   def destroy
   end
 
+  def publish
+    @article.publish
+    redirect_to articles_path
+  end
+
   private
 
   def article_params
-    params.require(:article).permit(:title, :description, :body, :picture, :category_id)
+    params.require(:article).permit(:title, :description, :body, :picture, :author, :source, :category_id)
   end
 
   def find_article

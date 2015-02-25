@@ -1,4 +1,9 @@
-%h1= t('view.article.page-header.index')
+.row
+  .col-xs-12.col-sm-4.col-md-2
+    = link_to new_article_path, class: 'btn btn-primary' do
+      %span.fa.fa-plus
+      = t '.btns.create'
+  .col-xs-12.col-sm-8.col-md-10
 .row
   %ul.media
     = render @articles

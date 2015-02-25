@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+    get '', to: 'dashboard#index', as: '/'
+    resources :articles do
+      collection do
+        post 'publish'
+      end
+    end
+  end
+
   devise_for :users
   root 'pages#index'
 
@@ -25,14 +34,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :posts
-  resources :articles do
-    collection do
-      get :admin
-      post :publish
-    end
-  end
-  resources :categories
+  resources :posts, :articles, :categories
 
   mount Ckeditor::Engine => '/ckeditor'
 

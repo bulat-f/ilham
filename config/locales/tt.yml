@@ -8,10 +8,9 @@ tt:
     signin: "Керергә"
     profile:
       label: "Профиль"
-      my: "Минем прифиль"
+      my: "Минем профиль"
       lib: "Минем китапханә"
       edit: "Профильне үзгәртү"
-      new-article: "Мәкалә язарга"
       writer_statistics: "Минем статистика"
       signout: "Чыгарга"
   footer:

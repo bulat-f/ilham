@@ -1,0 +1,4 @@
+- if can?(:publish, article) && article.unpublished
+  = form_tag({ action: :publish }, method: :post) do
+    = hidden_field_tag(:id, article.id)
+    = submit_tag 'Publish', class: 'btn btn-success'

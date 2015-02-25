@@ -1,19 +1,19 @@
 - provide(:title, @article.title)
 - content_for :head do
-  %meta{ property: "og:description", content: truncate(strip_tags(@article.body.html_safe), length: 128) }
-  %meta{ name: "description", content: truncate(strip_tags(@article.body.html_safe), length: 128) }
+  %meta{ property: "og:description", content: truncate(strip_tags(@article.body), length: 128) }
+  %meta{ name: "description", content: truncate(strip_tags(@article.body), length: 128) }
 .row.center
   .title
     %h1= @article.title
   .cover
     = image_tag @article.picture, class: "img-rounded center-block"
   = render 'shared/share'
-.row
-  = raw @article.body
+.row.prose
+  = sanitize(@article.body, attributes: %w(class href))
 .row
   %p.text-right
-    %strong= @article.user
+    %strong= @article.author
     %br
     = @article.published_at
-- if can?(:publish, @article) && @article.unpublished
-  = render 'publish', article: @article
+    %br
+    = link_to_source @article
