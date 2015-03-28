@@ -25,15 +25,15 @@ class User < ActiveRecord::Base
   end
 
   def buy!(fiction)
-    if fiction.class == Fixnum
-      id = fiction
-    else
-      id = fiction.id
-    end
+    id = fiction.class == Fixnum ? fiction : fiction.id
     self.purchases.create!(fiction_id: id)
   end
 
   def bought?(fiction)
-    self.purchases.find_by(fiction_id: fiction.id) || self.admin? || self.written_fictions.include?(fiction)
+    !purchases.find_by(fiction_id: fiction.id).nil?
+  end
+
+  def can_read?(fiction)
+    bought?(fiction) || self.admin? || self.written_fictions.include?(fiction)
   end
 end

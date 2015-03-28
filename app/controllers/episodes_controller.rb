@@ -5,7 +5,7 @@ class EpisodesController < ApplicationController
 
   before_action :find_fiction,       only: [:index, :show, :new, :edit, :update, :destroy]
   before_action :find_episode,       only: [:show, :new, :edit, :update, :destroy]
-  before_action :bought,             only: [:show]
+  before_action :can_read,           only: [:show]
 
   def index
     @episodes = @fiction.episodes
@@ -68,9 +68,9 @@ class EpisodesController < ApplicationController
     @episode = @fiction.episodes.find_by_id(params[:id]) unless @fiction.nil?
   end
 
-  def bought
-    unless current_user.bought?(@fiction) or current_user.admin?
-      flash[:warning] = 'flash.not-bought'
+  def can_read
+    unless current_user.can_read?(@fiction)
+      flash[:warning] = 'flash.not-can_read'
       redirect_to fiction_path(@fiction)
     end
   end

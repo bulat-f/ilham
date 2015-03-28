@@ -6,10 +6,10 @@ class PaymentsController < ApplicationController
   end
 
   def create
-    @fiction = Fiction.find_by_id payment_params[:fiction_id]
-    if @fiction
-      @sum = @fiction.price
-      @payment = current_user.payments.create(fiction_id: payment_params[:fiction_id], sum: @sum)
+    fiction = Fiction.find_by_id payment_params[:fiction_id]
+    if fiction
+      sum = fiction.price
+      @payment = current_user.payments.create(fiction_id: payment_params[:fiction_id], sum: sum)
       redirect_to "https://unitpay.ru/pay/9133-38f19?sum=#{ @payment.sum }&account=#{ @payment.id }&desc=Purchase+of+a+literary+work&hideDesc=true&"
     end
   end
@@ -24,7 +24,7 @@ class PaymentsController < ApplicationController
                                     profit:      params[:params][:profit],
                                     unitpayId:   params[:params][:unitpayId],
                                     status:      params[:method])
-        success("Success")
+        success('Success')
       end
 
       if @payment.status == 'pay'
@@ -33,7 +33,7 @@ class PaymentsController < ApplicationController
       end
 
     else
-      error("Payment not found")
+      error('Payment not found')
     end
   end
 
