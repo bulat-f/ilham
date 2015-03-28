@@ -7,3 +7,4 @@
 .row
   %ul.media
     = render @articles
+  = will_paginate @articles, previous_label: t('prev_page'), next_label: t('next_page')
