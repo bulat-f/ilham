@@ -38,6 +38,11 @@ tt:
       header: Төзәтергә
     form:
       submit: Җибәрергә
+  categories:
+    new:
+      header: Яңa категория
+    form:
+      submit: Ясарга
   posts:
     index:
       header: Уңыш остаханәсе

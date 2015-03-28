@@ -36,3 +36,5 @@ tt:
         category_id: Категория
         author: Автор
         source: Чыганак
+      category:
+        name: Категория исеме
