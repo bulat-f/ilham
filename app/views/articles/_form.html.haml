@@ -25,4 +25,4 @@
         = f.select :category_id, Category.all.map{ |genre| [genre, genre.id] }
     .col-md-4
       .form-group
-        = f.submit t('view.article.form.submit'), class: "btn btn-lg btn-default"
+        = f.submit t('.submit'), class: "btn btn-lg btn-default"

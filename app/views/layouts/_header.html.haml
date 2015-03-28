@@ -1,28 +1,28 @@
 %header.navbar.navbar-fixed-top.navbar-blue
   .navbar-inner
     .container
-      = link_to "Khayat", root_path, id: "logo"
+      = link_to 'Khayat', root_path, id: 'logo'
       %nav.navbar-right
         %ul.nav.nav-pills
-          %li= link_to t('header.fictions'), fictions_path
-          %li= link_to t('header.posts'), posts_path
-          %li= link_to t('header.articles'), articles_path
+          %li= link_to t('.fictions'), fictions_path
+          %li= link_to t('.posts'), posts_path
+          %li= link_to t('.articles'), articles_path
           - if user_signed_in?
             -if current_user.admin?
-              %li= link_to t('header.admin'), admin_path
+              %li= link_to t('.admin'), admin_path
             %li.dropdown
-              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                = t('header.profile.label')
+              %a.dropdown-toggle{ data: { toggle: 'dropdown' }, href: '#' }
+                = t('.profile.label')
                 %span.caret
               %ul.dropdown-menu
-                %li= link_to t('header.profile.my'), current_user
-                %li= link_to t('header.profile.lib'), lib_user_path(current_user)
-                %li= link_to t('header.profile.edit'), edit_user_registration_path(current_user)
+                %li= link_to t('.profile.my'), current_user
+                %li= link_to t('.profile.lib'), lib_user_path(current_user)
+                %li= link_to t('.profile.edit'), edit_user_registration_path(current_user)
                 - if current_user.writer?
-                  %li= link_to t('header.profile.writer_statistics'), statistic_user_path(current_user)
+                  %li= link_to t('.profile.writer_statistics'), statistic_user_path(current_user)
                 %li.divider
-                %li= link_to t('header.profile.signout'), destroy_user_session_path, :method => :delete
+                %li= link_to t('.profile.signout'), destroy_user_session_path, method: :delete
           - else
             %li
-              = link_to '#', data: {toggle: "modal", target: "#loginModal"}, style: 'font-weight: bolder' do
-                = t('header.signin')
+              = link_to '#', data: { toggle: 'modal', target: '#loginModal' }, style: 'font-weight: bolder' do
+                = t('.signin')

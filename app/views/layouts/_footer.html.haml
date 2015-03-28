@@ -9,10 +9,11 @@
         = mail_to 'xat@khayat.ru' do
           %span.fa.fa-envelope
           xat@khayat.ru
+      %li
+        = render 'layouts/metrika'
   .col-md-offset-3.col-md-6.col-sm-8
     %ul.right
-      %li= link_to t('footer.about'), about_path
-      %li= link_to t('footer.for_readers'), for_readers_path
-      %li= link_to t('footer.for_writers'), for_writers_path
-      %li= link_to t('footer.help'), help_path
-  = render 'layouts/metrika'
+      %li= link_to t('.about'), about_path
+      %li= link_to t('.for_readers'), for_readers_path
+      %li= link_to t('.for_writers'), for_writers_path
+      %li= link_to t('.help'), help_path

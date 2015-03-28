@@ -1,4 +1,22 @@
 tt:
+  layouts:
+    header:
+      fictions: Әсәрләр
+      posts: Уңыш остаханәсе
+      articles: Аналитика, публицистика
+      signin:  Керергә
+      profile:
+        label: Профиль
+        my: Минем профиль
+        lib: Минем китапханә
+        edit: Профильне үзгәртү
+        writer_statistics: Минем статистика
+        signout: Чыгарга
+    footer:
+      about: Сайт турында
+      for_readers: Укучылар өчен
+      for_writers: Язучылар өчен
+      help: Ярдәм
   users:
     show:
       title: Кулланучылар
@@ -10,8 +28,19 @@ tt:
           save: Сакларга
   articles:
     index:
+      header: Аналитика, публицистика
       btns:
         create: Мәкалә язарга
+    new:
+      header: Яңа мәкалә
+      panel: Мәкалә администратор тикшергәннән соң гына сайтта бастрылачак. Администратор мәкаләне төзәтү хокукына ия. Язмалар рецензияләнми, ни өчен сайтка эленмәве аңлатылмый. Экстремистик рухтагы, түбән эчтәлекле, әхлаксыз язмалар сайтта файдаланылмый.
+    edit:
+      header: Төзәтергә
+    form:
+      submit: Җибәрергә
+  posts:
+    index:
+      header: Уңыш остаханәсе
   admin:
     dashboard:
       index:
@@ -29,3 +58,10 @@ tt:
           finances:
             heading: Финанслар
             footer: Статитсика
+    articles:
+      new:
+        header: Яңа мәкалә
+      edit:
+        header: Төзәтергә
+      form:
+        submit: Җибәрергә

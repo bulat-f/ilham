@@ -34,3 +34,5 @@ tt:
         description: Тасфирлау
         body: Мәкалә
         category_id: Категория
+        author: Автор
+        source: Чыганак
