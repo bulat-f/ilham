@@ -9,50 +9,59 @@ class PaymentsController < ApplicationController
     fiction = Fiction.find_by_id payment_params[:fiction_id]
     if fiction
       sum = fiction.price
-      @payment = current_user.payments.create(fiction_id: payment_params[:fiction_id], sum: sum)
-      redirect_to "https://unitpay.ru/pay/9133-38f19?sum=#{ @payment.sum }&account=#{ @payment.id }&desc=Purchase+of+a+literary+work&hideDesc=true&"
+      @payment = current_user.payments.create(payment_params.merge(sum: sum))
+      redirect_to "https://unitpay.ru/pay/9133-38f19?sum=#{ @payment.sum }&
+                   account=#{ @payment.id }&
+                   desc=Purchase+of+a+literary+work&hideDesc=true&"
     end
   end
 
   def confirm
     @payment = Payment.find_by_id(params[:params][:account])
     if @payment
-      if @payment.update_attributes(operator:    params[:params][:operator],
-                                    paymentType: params[:params][:paymentType],
-                                    phone:       params[:params][:phone],
-                                    sign:        params[:params][:sign],
-                                    profit:      params[:params][:profit],
-                                    unitpayId:   params[:params][:unitpayId],
-                                    status:      params[:method])
-        success('Success')
+      if @payment.update_attributes(payment_params)
+        render success_message('Success')
       end
 
-      if @payment.status == 'pay'
-        gift = Gift.find_by(payment_id: @payment.id)
-        if gift
-          gift.pay!
-        else
-          user = User.find_by_id(@payment.user_id)
-          user.buy!(@payment.fiction_id)
-        end
-      end
-
+      confirm_purchase
     else
-      error('Payment not found')
+      render error_error('Payment not found')
     end
   end
 
   private
 
   def payment_params
-    params.require(:payment).permit(:fiction_id)
+    if params[:payment]
+      params.require(:payment).permit(:fiction_id)
+    else
+      { operator:    params[:params][:operator],
+        paymentType: params[:params][:paymentType],
+        phone:       params[:params][:phone],
+        sign:        params[:params][:sign],
+        profit:      params[:params][:profit],
+        unitpayId:   params[:params][:unitpayId],
+        status:      params[:method] }
+    end
   end
 
-  def error(msg)
-    render json: { error: { code: -32000, message: msg } }
+  def confirm_purchase
+    if @payment.paid?
+      gift = Gift.find_by(payment_id: @payment.id)
+      if gift
+        gift.pay!
+      else
+        user = User.find_by_id(@payment.user_id)
+        user.buy!(@payment.fiction_id)
+      end
+    end
   end
 
-  def success(msg)
-    render json: { result: { message: msg } }
+  def error_message(msg)
+    { json: { error: { code: -32000, message: msg } } }
+  end
+
+  def success_message(msg)
+    { json: { result: { message: msg } } }
   end
 end
