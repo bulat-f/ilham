@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150203164050) do
+ActiveRecord::Schema.define(version: 20150329085056) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title",                       null: false
@@ -79,6 +79,18 @@ ActiveRecord::Schema.define(version: 20150203164050) do
   end
 
   add_index "genres", ["name"], name: "index_genres_on_name", unique: true
+
+  create_table "gifts", force: :cascade do |t|
+    t.integer  "presentee_id",                 null: false
+    t.integer  "present_id",                   null: false
+    t.integer  "payment_id"
+    t.boolean  "paid",         default: false, null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  add_index "gifts", ["presentee_id", "present_id"], name: "index_gifts_on_presentee_id_and_present_id", unique: true
+  add_index "gifts", ["presentee_id"], name: "index_gifts_on_presentee_id"
 
   create_table "interests", force: :cascade do |t|
     t.integer  "user_id"

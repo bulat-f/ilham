@@ -28,8 +28,13 @@ class PaymentsController < ApplicationController
       end
 
       if @payment.status == 'pay'
-        @user = User.find_by_id(@payment.user_id)
-        @user.buy!(@payment.fiction_id)
+        gift = Gift.find_by(payment_id: @payment.id)
+        if gift
+          gift.pay!
+        else
+          user = User.find_by_id(@payment.user_id)
+          user.buy!(@payment.fiction_id)
+        end
       end
 
     else

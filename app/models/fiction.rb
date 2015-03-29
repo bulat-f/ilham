@@ -5,10 +5,13 @@ class Fiction < ActiveRecord::Base
 
   belongs_to :author, class_name: 'User'
   belongs_to :genre
-  has_many   :purchases
-  has_many   :readers, through: :purchases
-  has_many   :payments
-  has_many   :episodes
+
+  has_many :purchases
+  has_many :gifts
+  has_many :readers,    through: :purchases
+  has_many :presentees, through: :gifts
+  has_many :payments
+  has_many :episodes
 
   mount_uploader :cover, CoverUploader
 

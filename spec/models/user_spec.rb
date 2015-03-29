@@ -41,4 +41,20 @@ describe User do
       it { expect(user.bought?(fiction)).to eq(true) }
     end
   end
+
+  describe '#received?' do
+    let(:user)    { FactoryGirl.create :user }
+    let(:present) { FactoryGirl.create :fiction }
+    let(:gift)    { FactoryGirl.create :gift, presentee: user, present: present }
+
+    context 'before confirm donate' do
+      it { expect(user.received?(present)).to eq(false) }
+    end
+
+    context 'after confirm donate' do
+      before { gift.pay! }
+
+      it { expect(user.received?(present)).to eq(true) }
+    end
+  end
 end
