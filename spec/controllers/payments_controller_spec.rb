@@ -6,21 +6,29 @@ describe PaymentsController do
     let(:user)    { FactoryGirl.create :user }
     let(:params)  { { payment: { fiction_id: fiction.id } } }
 
-    before do
-      sign_in user
+    context 'when user do not signed in' do
+      it 'should change payments count' do
+        expect{ post :create, params }.not_to change(Payment, :count)
+      end
     end
 
-    it 'should change payments count' do
-      expect{post :create, params}.to change(Payment, :count).by(1)
-    end
+    context 'when user signed in' do
+      before do
+        sign_in user
+      end
 
-    it 'should change user payments count' do
-      expect{post :create, params}.to change(user.payments, :count).by(1)
-    end
+      it 'should change payments count' do
+        expect{ post :create, params }.to change(Payment, :count).by(1)
+      end
 
-    context 'payment sum' do
-      before { post :create, params }
-      it { expect(Payment.last.sum).to eq(fiction.price) }
+      it 'should change user payments count' do
+        expect{ post :create, params }.to change(user.payments, :count).by(1)
+      end
+
+      context 'payment sum' do
+        before { post :create, params }
+        it { expect(Payment.last.sum).to eq(fiction.price) }
+      end
     end
   end
 
