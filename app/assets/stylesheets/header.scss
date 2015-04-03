@@ -1,0 +1,25 @@
+@import url(http://fonts.googleapis.com/css?family=Alex+Brush);
+
+header {
+  padding-top: 5px;
+}
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 2.5em;
+  letter-spacing: -1px;
+  padding-top: 6px;
+  font-family: 'Alex Brush', cursive;
+  font-weight: bolder;
+  line-height: 1;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.navbar-blue {
+  background: rgba(220, 220, 255, 0.9);
+  border-bottom: 1px solid;
+  border-bottom-color: rgba(85, 180, 225, 0.6);
+}
