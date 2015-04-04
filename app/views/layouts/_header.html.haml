@@ -1,7 +1,13 @@
-%header.navbar.navbar-fixed-top.navbar-blue
-  .navbar-inner
-    .container
-      = link_to 'Khayat', root_path, id: 'logo'
+%header.navbar.navbar-fixed-top.navbar-default
+  .container-fluid
+    .navbar-header
+      %button.navbar-toggle.collapsed{ type: 'button', data: { toggle: 'collapse', target: '#navbar-collapse' } }
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to 'Khayat', root_path, class: 'navbar-brand', id: 'logo'
+    .collapse.navbar-collapse#navbar-collapse
       %nav.navbar-right
         %ul.nav.nav-pills
           %li= link_to t('.fictions'), fictions_path

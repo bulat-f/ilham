@@ -1,0 +1,36 @@
+footer {
+  margin-top: 30px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: lightGray;
+  vertical-align: middle;
+
+  a {
+    color: #555;
+    &:hover {
+      color: #222;
+    }
+  }
+
+  small {
+    float: left;
+  }
+
+  ul.right {
+    float: right;
+    list-style: none;
+    padding-top: 6px;
+      li {
+        float: left;
+        margin-left: 16px;
+      }
+  }
+}
+
+ul.social {
+  line-height: 1.8em;
+  a {
+    text-decoration: none;
+    opacity: 0.8;
+  }
+}
