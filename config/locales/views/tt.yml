@@ -22,10 +22,20 @@ tt:
       title: Кулланучылар
   devise:
     registrations:
+      form:
+        submit: Теркәлергә
       edit:
         title: Профильне үзгәртү
         btns:
           save: Сакларга
+    sessions:
+      form:
+        submit: Керергә
+    shared:
+      links:
+        signin: Керү
+        sign-up: Теркәлү
+        forgot-password: Парольне искә төшерү
   articles:
     index:
       header: Аналитика, публицистика
