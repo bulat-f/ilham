@@ -1,0 +1,18 @@
+#modal.modal.fade{ role: 'dialog', tabindex: '-1', aria: { hidden: 'true', labelledby: 'loginModalLabel' } }
+  .modal-dialog
+    .modal-content
+      .modal-body.center#cover
+        // = image_tag '#', id: 'cover', class: 'img-rounded'
+        %h1#title
+        %p#author
+      .modal-footer
+        = link_to '#', class: 'btn btn-primary' do
+          = t('fictions.action.buy')
+          %strong
+            (
+            %span#price
+            %span.glyphicon.glyphicon-ruble
+            )
+        = link_to '#', class: 'btn btn-success' do
+          = t('fictions.action.give')
+          %span.glyphicon.glyphicon-gift

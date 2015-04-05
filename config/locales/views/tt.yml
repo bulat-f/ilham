@@ -46,6 +46,11 @@ tt:
   posts:
     index:
       header: Уңыш остаханәсе
+  fictions:
+    action:
+      read: Укырга
+      buy: Түләргә
+      more: Тулырак
   admin:
     dashboard:
       index:

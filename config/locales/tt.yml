@@ -6,9 +6,6 @@ tt:
       not_admin: "You are not admin!"
       not_writer: "You are not writer!"
   btn:
-    more: "Тулырак"
-    read: "Укырга"
-    buy: "Түләргә"
     send_password: "Серсүзне үзгәртү инструкциясен җибәрергә"
     change_password: "Минем серсүзне үзгәртергә"
   label:
