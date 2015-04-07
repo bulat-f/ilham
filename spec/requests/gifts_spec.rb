@@ -4,11 +4,10 @@ RSpec.describe 'Gifts', type: :request do
   describe 'fitctions index page' do
     let!(:fiction) { FactoryGirl.create :fiction, title: 'First fiction' }
 
-    before { visit fictions_path }
+    before { visit fiction_path(fiction) }
 
     it 'generate modal div', js: true do
-      click_link 'buy'
-      expect(page).to have_selector('a', text: 'Khayat')
+      expect(page).to have_selector('h1', text: fiction.title)
     end
   end
 end
