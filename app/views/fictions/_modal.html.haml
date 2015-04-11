@@ -2,17 +2,17 @@
   .modal-dialog
     .modal-content
       .modal-body.center#cover
-        // = image_tag '#', id: 'cover', class: 'img-rounded'
         %h1#title
         %p#author
       .modal-footer
-        = link_to '#', class: 'btn btn-primary' do
-          = t('fictions.action.buy')
-          %strong
-            (
-            %span#price
-            %span.glyphicon.glyphicon-ruble
-            )
         = link_to '#', class: 'btn btn-success' do
           = t('fictions.action.give')
           %span.glyphicon.glyphicon-gift
+
+        // invalid
+        - if user_signed_in?
+          = form_for current_user.payments.build(fiction_id: fiction.id) do |f|
+            .hidden= f.hidden_field :fiction_id
+            = button_tag 'NNN', type: submit, class: 'btn btn-primary'
+        - else
+          = link_to t('.buy'), new_user_session_path, class: 'buy btn btn-primary'
