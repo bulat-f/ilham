@@ -10,7 +10,6 @@ class User < ActiveRecord::Base
 
   has_many :fictions, through: :purchases
   has_many :presents, through: :gifts
-  has_many :payments
   has_many :articles
 
   scope :writers, -> { where(writer: true) }

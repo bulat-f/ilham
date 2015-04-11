@@ -17,12 +17,36 @@ describe PaymentsController do
         sign_in user
       end
 
-      it 'should change payments count' do
-        expect{ post :create, params }.to change(Payment, :count).by(1)
+      context 'and purchase do not exist' do
+
+        it 'should change user purchases count' do
+          expect{ post :create, params }.to change(user.purchases, :count).by(1)
+        end
+
+        it 'should change payments count' do
+          expect{ post :create, params }.to change(Payment, :count).by(1)
+        end
       end
 
-      it 'should change user payments count' do
-        expect{ post :create, params }.to change(user.payments, :count).by(1)
+      context 'and purchase exist' do
+        let!(:purchase) { user.purchases.create(fiction: fiction) }
+
+        it 'should not change purchases count' do
+          expect{ post :create, params }.not_to change(Purchase, :count)
+        end
+
+        context 'with payed status' do
+          before { purchase.pay! }
+
+          it 'should not change payments count' do
+            expect{ post :create, params }.not_to change(Payment, :count)
+          end
+        end
+
+        context 'without payed status' do
+          it 'should change payments count' do
+            expect{ post :create, params }.to change(Payment, :count)
+          end
       end
 
       context 'payment sum' do

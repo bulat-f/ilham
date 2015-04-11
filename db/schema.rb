@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150329085056) do
+ActiveRecord::Schema.define(version: 20150412114154) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title",                       null: false
@@ -81,12 +81,11 @@ ActiveRecord::Schema.define(version: 20150329085056) do
   add_index "genres", ["name"], name: "index_genres_on_name", unique: true
 
   create_table "gifts", force: :cascade do |t|
-    t.integer  "presentee_id",                 null: false
-    t.integer  "present_id",                   null: false
-    t.integer  "payment_id"
-    t.boolean  "paid",         default: false, null: false
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.integer  "presentee_id", null: false
+    t.integer  "present_id",   null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.boolean  "paid"
   end
 
   add_index "gifts", ["presentee_id", "present_id"], name: "index_gifts_on_presentee_id_and_present_id", unique: true
@@ -105,22 +104,22 @@ ActiveRecord::Schema.define(version: 20150329085056) do
   add_index "interests", ["user_id"], name: "index_interests_on_user_id", unique: true
 
   create_table "payments", force: :cascade do |t|
-    t.string   "operator",    limit: 255
-    t.string   "paymentType", limit: 255
-    t.string   "phone",       limit: 12
-    t.string   "sign",        limit: 255
-    t.decimal  "profit",                  precision: 10, scale: 4
-    t.decimal  "sum",                     precision: 10, scale: 4
+    t.string   "operator",     limit: 255
+    t.string   "paymentType",  limit: 255
+    t.string   "phone",        limit: 12
+    t.string   "sign",         limit: 255
+    t.decimal  "profit",                   precision: 10, scale: 4
+    t.decimal  "sum",                      precision: 10, scale: 4
     t.integer  "unitpayId"
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "status",      limit: 255
-    t.integer  "fiction_id"
+    t.string   "status",       limit: 255
+    t.integer  "payable_id"
+    t.string   "payable_type"
   end
 
+  add_index "payments", ["payable_type", "payable_id"], name: "index_payments_on_payable_type_and_payable_id"
   add_index "payments", ["unitpayId"], name: "index_payments_on_unitpayId", unique: true
-  add_index "payments", ["user_id"], name: "index_payments_on_user_id"
 
   create_table "posts", force: :cascade do |t|
     t.string   "title",       limit: 255
@@ -136,6 +135,7 @@ ActiveRecord::Schema.define(version: 20150329085056) do
     t.integer  "fiction_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "paid",       default: false, null: false
   end
 
   add_index "purchases", ["fiction_id"], name: "index_purchases_on_fiction_id"
