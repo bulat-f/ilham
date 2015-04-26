@@ -1,9 +1,9 @@
 FactoryGirl.define do
-  factory :payment do
-    fiction
-    user
-    # after(:create) do |payment, evaluator|
-    #   payment.sum evaluator.fiction.price
-    # end
+  factory :purchase_payment, class: 'Payment' do
+    association :payable, factory: :purchase
+  end
+
+  factory :gift_payment, class: 'Payment' do
+    association :payable, factory: :gift
   end
 end

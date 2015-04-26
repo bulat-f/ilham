@@ -6,13 +6,15 @@ class PaymentsController < ApplicationController
   end
 
   def create
-    fiction = Fiction.find_by_id payment_params[:fiction_id]
-    if fiction
-      sum = fiction.price
-      @payment = current_user.payments.create(payment_params.merge(sum: sum))
+    @payment = Payment.new(payment_params)
+    payable = @payment.payable
+    if payable && payable.pay_available_for?(current_user) && @payment.save!
+      @payment.update_attribute(:sum, payable.price)
       redirect_to "https://unitpay.ru/pay/9133-38f19?sum=#{ @payment.sum }&
                    account=#{ @payment.id }&
                    desc=Purchase+of+a+literary+work&hideDesc=true&"
+    else
+      redirect_to root_path
     end
   end
 
@@ -33,7 +35,7 @@ class PaymentsController < ApplicationController
 
   def payment_params
     if params[:payment]
-      params.require(:payment).permit(:fiction_id)
+      params.require(:payment).permit(:payable_id, :payable_type)
     else
       { operator:    params[:params][:operator],
         paymentType: params[:params][:paymentType],
@@ -46,15 +48,7 @@ class PaymentsController < ApplicationController
   end
 
   def confirm_purchase
-    if @payment.paid?
-      gift = Gift.find_by(payment_id: @payment.id)
-      if gift
-        gift.pay!
-      else
-        user = User.find_by_id(@payment.user_id)
-        user.buy!(@payment.fiction_id)
-      end
-    end
+    @payment.payable.pay! if @payment.paid?
   end
 
   def error_message(msg)
