@@ -5,13 +5,13 @@ RSpec.describe Gift, type: :model do
 
   describe '#pay!' do
     context 'befor pay' do
-      it { expect(gift.paid).to eq(false) }
+      it { expect(gift.paid?).to eq(false) }
     end
 
     context 'after pay' do
       before { gift.pay! }
 
-      it { expect(gift.paid).to eq(true) }
+      it { expect(gift.paid?).to eq(true) }
     end
   end
 end

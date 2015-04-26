@@ -1,8 +1,6 @@
 class Payment < ActiveRecord::Base
-  belongs_to :user
-  belongs_to :fiction
 
-  has_one :gift
+  belongs_to :payable, polymorphic: true
 
   def paid?
     status == 'pay'

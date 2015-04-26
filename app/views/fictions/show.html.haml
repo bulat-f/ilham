@@ -1,7 +1,7 @@
 - provide(:title, @fiction.title)
 - content_for :head do
-  %meta{ property: "og:description", content: truncate(strip_tags(@fiction.body.html_safe), length: 128) }
-  %meta{ name: "description", content: truncate(strip_tags(@fiction.body.html_safe), length: 128) }
+  %meta{ property: 'og:description', content: truncate(strip_tags(@fiction.body.html_safe), length: 128) }
+  %meta{ name: 'description', content: truncate(strip_tags(@fiction.body.html_safe), length: 128) }
 .page-header
   %h1
     = @fiction.title
@@ -10,15 +10,15 @@
 .row
   .col-md-3.col-sm-6
     .row
-      = image_tag @fiction.cover.thumb.url.to_s, class: "img-thumbnail"
+      = image_tag @fiction.cover.thumb.url.to_s, class: 'img-thumbnail'
     .row.stat.center
       .panel.panel-default
         .panel-body
-          = render 'buy', fiction: @fiction
+          = render 'action', fiction: @fiction
         .panel-footer
           = render 'shared/share'
   .col-md-9.col-sm-6
-    %div{ class: "#{@fiction.genre.poetry? ? "poetry" : "prose"}" }
+    %div{ class: "#{@fiction.genre.poetry? ? 'poetry' : 'prose'}" }
       = markdown @fiction.body
 .row.center
   = render 'buy_lg', fiction: @fiction

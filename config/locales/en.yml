@@ -1,53 +1,11 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   prev_page: "Prev page"
   next_page: "Next page"
-  header:
-    fictions: "Fictions"
-    posts: "Posts"
-    articles: "Articles"
-    signin: "Log in"
-    profile:
-      label: "Profile"
-      my: "My profile"
-      lib: "My lib"
-      edit: "Edit profile"
-      new-article: "New article"
-      writer_statistics: "My statistics"
-      signout: "Sign out"
-  footer:
-    about: "About"
-    for_readers: "For readers"
-    for_writers: "For writers"
-    help: "Help"
   flash:
     user:
       not_admin: "You are not admin!"
       not_writer: "You are not writer!"
   btn:
-    more: "Read more..."
-    read: "Read"
-    buy: "Buy"
     send_password: "Send reset password instruction"
     change_password: "Change My Password"
   label:
@@ -74,20 +32,3 @@ en:
     journalism: ""
     criticism: ""
     play: ""
-  view:
-    article:
-      page-header:
-        index: Index
-        new: New
-        edit: Edit
-      form:
-        submit: Submit
-      panel:
-        new: Article publish after admin confirm this action.
-    category:
-      page-header:
-        index: Index
-        new: New
-        edit: Edit
-      form:
-        submit: Submit

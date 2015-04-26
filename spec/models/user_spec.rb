@@ -10,7 +10,7 @@ describe User do
     end
 
     context 'author' do
-      let(:author)  { FactoryGirl.create :author }
+      let(:author)      { FactoryGirl.create :author }
       let(:own_fiction) { FactoryGirl.create :fiction, author: author }
       it { expect(author.can_read?(own_fiction)).to eq(true) }
     end
@@ -18,7 +18,14 @@ describe User do
     context 'purchased by the user' do
       let(:user) { FactoryGirl.create :user }
       before { user.purchases.create(fiction_id: fiction.id) }
-      it { expect(user.can_read?(fiction)).to eq(true) }
+      context 'before pay' do
+        it { expect(user.can_read?(fiction)).to eq(false) }
+      end
+
+      context 'before pay' do
+        before { user.purchases.last.pay! }
+        it { expect(user.can_read?(fiction)).to eq(true) }
+      end
     end
 
     context 'other user' do
@@ -32,13 +39,11 @@ describe User do
     let(:user) { FactoryGirl.create :user }
 
     context 'ActiveRecord object as argument' do
-      before { user.buy!(fiction) }
-      it { expect(user.bought?(fiction)).to eq(true) }
+      it { expect{ user.buy!(fiction) }.to change(user.purchases, :count) }
     end
 
     context 'Fixnum as argument' do
-      before { user.buy!(fiction.id) }
-      it { expect(user.bought?(fiction)).to eq(true) }
+      it { expect{ user.buy!(fiction.id) }.to change(user.purchases, :count) }
     end
   end
 

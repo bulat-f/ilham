@@ -1,16 +1,9 @@
 Rails.application.routes.draw do
 
-  namespace :admin do
-    get '', to: 'dashboard#index', as: '/'
-    resources :articles do
-      collection do
-        post 'publish'
-      end
-    end
-  end
+  root 'pages#index'
 
   devise_for :users
-  root 'pages#index'
+  mount Ckeditor::Engine => '/ckeditor'
 
   get 'about'       => 'pages#about'
   get 'for_readers' => 'pages#for_readers'
@@ -21,13 +14,14 @@ Rails.application.routes.draw do
   resources :fictions do
     resources :episodes
   end
-  resources :users,     only: [:index, :show] do
+
+  resources :users, only: [:index, :show] do
     member do
       get 'statistic'
       get 'lib'
     end
   end
-  resources :purchases, only: [:create]
+
   resources :payments do
     collection do
       get 'confirm'
@@ -36,7 +30,14 @@ Rails.application.routes.draw do
 
   resources :posts, :articles, :categories
 
-  mount Ckeditor::Engine => '/ckeditor'
+  namespace :admin do
+    get '', to: 'dashboard#index', as: '/'
+    resources :articles do
+      collection do
+        post 'publish'
+      end
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
