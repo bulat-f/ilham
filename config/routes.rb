@@ -28,7 +28,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :posts, :articles, :categories
+  resources :posts, :articles, :categories, :purchases
 
   namespace :admin do
     get '', to: 'dashboard#index', as: '/'

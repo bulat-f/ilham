@@ -6,6 +6,10 @@ require 'capybara/rspec'
 require 'capybara/rails'
 require 'selenium-webdriver'
 
+include Warden::Test::Helpers
+
+Warden.test_mode!
+
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
@@ -22,4 +26,9 @@ RSpec.configure do |config|
 
   config.include Devise::TestHelpers, type: :controller
   config.include Capybara::DSL
+
+  config.include Warden::Test::Helpers
+  config.before :suite do
+    Warden.test_mode!
+  end
 end

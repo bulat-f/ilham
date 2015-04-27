@@ -1,18 +1,16 @@
 #modal.modal.fade{ role: 'dialog', tabindex: '-1', aria: { hidden: 'true', labelledby: 'loginModalLabel' } }
   .modal-dialog
     .modal-content
-      .modal-body.center#cover
-        %h1#title
-        %p#author
+      .modal-body.center#cover{style: "background: url(#{fiction.cover.thumb.url.to_s})" }
+        %h1#title= fiction.title
+        %p#author= fiction.author
       .modal-footer
         = link_to '#', class: 'btn btn-success' do
           = t('fictions.action.give')
           %span.glyphicon.glyphicon-gift
-
-        // invalid
         - if user_signed_in?
-          = form_for current_user.payments.build(fiction_id: fiction.id) do |f|
+          = form_for current_user.purchases.build(fiction_id: fiction.id), html: { class: 'form-inline' } do |f|
             .hidden= f.hidden_field :fiction_id
-            = button_tag 'NNN', type: submit, class: 'btn btn-primary'
+            = button_tag t('fictions.action.buy'), type: :submit, class: 'btn btn-primary'
         - else
           = link_to t('.buy'), new_user_session_path, class: 'buy btn btn-primary'

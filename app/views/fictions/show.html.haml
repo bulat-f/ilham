@@ -21,4 +21,3 @@
     %div{ class: "#{@fiction.genre.poetry? ? 'poetry' : 'prose'}" }
       = markdown @fiction.body
 .row.center
-  = render 'buy_lg', fiction: @fiction

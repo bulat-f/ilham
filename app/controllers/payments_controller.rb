@@ -5,6 +5,14 @@ class PaymentsController < ApplicationController
   def index
   end
 
+  def new
+    @fiction = Fiction.find_by_id(params[:fiction_id])
+    respond_to do |format|
+      format.html { render :new }
+      format.js
+    end
+  end
+
   def create
     @payment = Payment.new(payment_params)
     payable = @payment.payable
