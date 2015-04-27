@@ -2,8 +2,10 @@
   - if current_user.can_read?(fiction)
     = link_to t('.read'), first_episode_path(fiction), class: 'btn btn-info'
   - else
-    = form_tag new_payment_path, method: :get, remote: true do
+    = form_tag new_payment_path, method: :get, remote: true, class: 'form-inline' do
       = hidden_field_tag 'fiction_id', fiction.id
-      = submit_tag t('.pay'), { class: 'btn btn-primary' }
+      .input-group
+        = submit_tag t('.pay'), class: 'btn btn-primary'
 - else
   = link_to t('.pay'), new_user_session_path, class: 'btn btn-primary'
+= link_to t('.more'), fiction, class: 'btn btn-default'
