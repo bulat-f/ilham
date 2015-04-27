@@ -9,4 +9,7 @@
       = image_tag fiction.cover.thumb.url.to_s
     .caption
       = render 'action', fiction: fiction
-      %span.ribbon= fiction.price.to_s + 'р.'
+      = link_to t('fictions.action.more'), fiction, class: 'btn btn-default'
+      %span.ribbon
+        = fiction.price.to_s
+        %span.glyphicon.glyphicon-ruble

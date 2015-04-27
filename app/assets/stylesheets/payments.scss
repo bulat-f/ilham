@@ -1,3 +1,13 @@
-// Place all the styles related to the payments controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  color: #fff;
+  bottom: 0px;
+  font-family: 'Comfortaa', cursive;
+  padding: 8px;
+  margin: 32px 0px;
+}
+
+#cover {
+  background-size: cover;
+}
