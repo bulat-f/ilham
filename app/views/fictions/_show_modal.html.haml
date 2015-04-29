@@ -7,12 +7,4 @@
           %h4#author= fiction.author
           %p= fiction.genre
       .modal-footer
-        = link_to '#', class: 'btn btn-success' do
-          = t('fictions.action.give')
-          %span.glyphicon.glyphicon-gift
-        - if user_signed_in?
-          = form_for current_user.purchases.build(fiction_id: fiction.id), html: { class: 'inline' } do |f|
-            = f.hidden_field :fiction_id
-            = button_tag t('fictions.action.buy'), type: :submit, class: 'btn btn-primary'
-        - else
-          = link_to t('.buy'), new_user_session_path, class: 'buy btn btn-primary'
+        = render 'pay_actions', fiction: fiction

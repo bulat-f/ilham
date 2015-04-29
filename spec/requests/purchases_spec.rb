@@ -10,8 +10,8 @@ RSpec.describe 'Purchases', :type => :request do
     end
 
     it 'when click buy button', js: true do
-      click_button I18n.t('fictions.action.pay')
-      expect{ click_button I18n.t('fictions.action.buy') }.to change(user.purchases, :count)
+      click_button I18n.t('fictions.actions.pay')
+      expect{ click_button I18n.t('fictions.actions.buy') }.to change(user.purchases, :count)
     end
   end
 end

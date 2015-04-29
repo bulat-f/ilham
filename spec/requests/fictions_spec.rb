@@ -12,12 +12,12 @@ RSpec.describe 'Fictions', type: :request do
       end
 
       it 'when click more' do
-        click_link I18n.t('fictions.action.more')
+        click_link I18n.t('fictions.actions.more')
         expect(current_path).to eq(fiction_path(fiction))
       end
 
       it 'generate modal div', js: true do
-        click_button I18n.t('fictions.action.pay')
+        click_button I18n.t('fictions.actions.pay')
         expect(page).to have_css('h1#title', text: fiction.title)
       end
     end
@@ -28,12 +28,12 @@ RSpec.describe 'Fictions', type: :request do
       end
 
       it 'when click more' do
-        click_link I18n.t('fictions.action.more')
+        click_link I18n.t('fictions.actions.more')
         expect(current_path).to eq(fiction_path(fiction))
       end
 
       it 'redirect sign in path for pay' do
-        click_link I18n.t('fictions.action.pay')
+        click_link I18n.t('fictions.actions.pay')
         expect(current_path).to eq(new_user_session_path)
       end
     end

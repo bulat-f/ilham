@@ -8,8 +8,7 @@
             = "(#{fiction.genre})"
       = image_tag fiction.cover.thumb.url.to_s
     .caption
-      = render 'action', fiction: fiction
-      = link_to t('fictions.action.more'), fiction, class: 'btn btn-default'
+      = render 'actions', fiction: fiction
       %span.ribbon
         = fiction.price.to_s
         %span.glyphicon.glyphicon-ruble
