@@ -6,9 +6,9 @@ class PaymentsController < ApplicationController
   end
 
   def new
-    @fiction = Fiction.find_by_id(params[:fiction_id])
+    @payment = Payment.new(payment_params)
     respond_to do |format|
-      format.html { render :new }
+      format.html
     end
   end
 

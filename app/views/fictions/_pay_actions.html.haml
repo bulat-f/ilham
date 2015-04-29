@@ -2,8 +2,9 @@
   = t('fictions.actions.give')
   %span.glyphicon.glyphicon-gift
 - if user_signed_in?
-  = form_for current_user.purchases.build(fiction_id: fiction.id), html: { class: 'inline' } do |f|
-    = f.hidden_field :fiction_id
-    = button_tag t('fictions.actions.buy'), type: :submit, class: 'btn btn-primary'
+  - unless current_user.bought? fiction
+    = form_for current_user.purchases.build(fiction_id: fiction.id), html: { class: 'inline' } do |f|
+      = f.hidden_field :fiction_id
+      = button_tag t('fictions.actions.buy'), type: :submit, class: 'btn btn-primary'
 - else
   = link_to t('fictions.actions.buy'), new_user_session_path, class: 'buy btn btn-primary'

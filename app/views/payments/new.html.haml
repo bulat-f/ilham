@@ -1,13 +1,2 @@
-%h1= @fiction.title
+%h1= @payment.payable_type
 .row
-  .col-md-offset-4.col-md-4
-    - if user_signed_in?
-      = form_for current_user.purchases.build(fiction_id: @fiction.id) do |f|
-        .hidden= f.hidden_field :fiction_id
-        = button_tag t('fictions.action.buy'), type: :submit, class: 'btn btn-primary'
-    - else
-      = link_to t('.buy'), new_user_session_path, class: 'buy btn btn-primary'
-
-    = link_to '#', class: 'btn btn-success' do
-      = t('fictions.action.give')
-      %span.glyphicon.glyphicon-gift
