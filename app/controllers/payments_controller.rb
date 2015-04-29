@@ -9,7 +9,6 @@ class PaymentsController < ApplicationController
     @fiction = Fiction.find_by_id(params[:fiction_id])
     respond_to do |format|
       format.html { render :new }
-      format.js
     end
   end
 
