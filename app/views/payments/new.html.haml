@@ -1,2 +1,23 @@
-%h1= @payment.payable_type
-.row
+%h3.text-center
+  = @payment.payable
+  %small
+    %span.label.label-warning
+      = @payment.payable.price
+      %span.glyphicon.glyphicon-ruble
+.row.center
+  .col-sm-6.col-md-offset-2.col-md-2
+    = link_to '#yandex' do
+      = image_tag '/pay_icons/yandex.png'
+      %h4 Яндекс.Деньги
+  .col-sm-6.col-md-2
+    = link_to '#qiwi' do
+      = image_tag '/pay_icons/qiwi.png'
+      %h4 Qiwi кошелек
+  .col-sm-6.col-md-2
+    = link_to '#cards' do
+      = image_tag '/pay_icons/cards.png'
+      %h4 Банк карталары
+  .col-sm-6.col-md-2
+    = link_to '#other' do
+      = image_tag '/pay_icons/other.png'
+      %h4 Башка ысуллар

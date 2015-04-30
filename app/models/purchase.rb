@@ -5,6 +5,10 @@ class Purchase < ActiveRecord::Base
 
   has_many :payments, as: :payable
 
+  def to_s
+    fiction.to_s
+  end
+
   def pay!
     self[:paid] = true
     self.save!
