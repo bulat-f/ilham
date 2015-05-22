@@ -3,14 +3,15 @@ require 'rails_helper'
 RSpec.describe 'Purchases', :type => :request do
   let!(:user)    { FactoryGirl.create :user }
   let!(:fiction) { FactoryGirl.create :fiction }
-  describe 'creating' do
-    let(:buy_button) { I18n.t('fictions.actions.buy') }
-    let(:pay_button) { I18n.t('fictions.actions.pay') }
-    before do
-      login_as user, scope: :user
-      visit fictions_path
-    end
+  let(:buy_button) { I18n.t('fictions.actions.buy') }
+  let(:pay_button) { I18n.t('fictions.actions.pay') }
 
+  before do
+    login_as user, scope: :user
+  end
+
+  describe 'creating' do
+    before { visit fictions_path }
     context 'if it not exist' do
       before { click_button pay_button }
       context 'when click buy button' do
@@ -36,15 +37,19 @@ RSpec.describe 'Purchases', :type => :request do
             expect(page).to have_button(buy_button)
           end
         end
-
-        context 'and user paid' do
-          before { purchase.pay! }
-
-          it 'should not have buy button', js: true do
-            expect(page).not_to have_button(buy_button)
-          end
-        end
       end
+    end
+  end
+
+  describe 'after paid' do
+    let!(:purchase) { user.purchases.create fiction: fiction }
+    before do
+      purchase.pay!
+      visit fictions_path
+    end
+
+    it 'should not have pay button' do
+      expect(page).not_to have_button(pay_button)
     end
   end
 end
