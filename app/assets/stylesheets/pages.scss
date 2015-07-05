@@ -1,33 +1,3 @@
-#index-carousel {
-  margin-top: -60px;
-}
-
-.carousel-caption {
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 16px;
-}
-
-.carousel-caption blockquote {
-  border-left: none;
-}
-
-.carousel-caption blockquote p::before {
-  color: #aaa;
-  font-size: 4em;
-  content: open-quote;
-  line-height: 0.1em;
-  margin-right: 0.25em;
-  vertical-align: -0.4em;
-}
-
-.carousel-caption blockquote small {
-  color: #ddd;
-}
-
-.carousel-caption p {
-  font-size: 1.25em;
-}
-
 .stat {
   padding-top: 4px;
 }
@@ -52,4 +22,62 @@
 
 .pay-item {
   padding-top: 64px;
+}
+
+.column {
+  position: relative;
+  float: left;
+
+  &#left {
+    width: 62.5%;
+  }
+
+  &#right {
+	width: 37.5%;
+  }
+}
+
+.promo {
+  position: relative;
+  float: left;
+  padding: 16px;
+
+  &.sm {
+	width: 55%;
+  }
+
+  &.lg {
+	width: 45%;
+  }
+
+  &#welcome {
+	width: 100%;
+	height: 300px;
+	background: url(/welcome.jpg);
+	background-size: cover;
+  }
+
+  &#fictions {
+	background: #a00;
+	height: 100px;
+  }
+
+  &#workshop {
+	background: #0a0;
+	height: 100px;
+  }
+
+  &#articles {
+	background: #00a;
+	height: 100px;
+  }
+
+  &#writers {
+	background: #000;
+	height: 100px;
+  }
+
+  &#sign-up {
+	width: 100%;
+  }
 }
