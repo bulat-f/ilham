@@ -3,6 +3,8 @@ class PagesController < ApplicationController
     if user_signed_in?
       @fictions = current_user.fictions.take(3)
       @posts = Post.order(:created_at => :desc).first(3)
+    else
+      render layout: 'welcome'
     end
   end
 

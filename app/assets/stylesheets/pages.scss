@@ -24,60 +24,71 @@
   padding-top: 64px;
 }
 
-.column {
-  position: relative;
-  float: left;
-
-  &#left {
-    width: 62.5%;
-  }
-
-  &#right {
-	width: 37.5%;
-  }
-}
-
-.promo {
-  position: relative;
-  float: left;
-  padding: 16px;
-
-  &.sm {
-	width: 55%;
-  }
-
-  &.lg {
-	width: 45%;
-  }
-
-  &#welcome {
-	width: 100%;
-	height: 300px;
-	background: url(/welcome.jpg);
+#welcome {
+	background: url('/welcome.jpg');
 	background-size: cover;
-  }
+	background-attachment: fixed;
+	position: relative;
+	padding: 16px 0;
+	margin-top: -60px;
 
-  &#fictions {
-	background: #a00;
-	height: 100px;
-  }
+	.caption {
+		position: absolute;
+		top: 128px;
+		z-index: 10;
+		color: $carousel-caption-color;
+		text-align: center;
+		text-shadow: $carousel-text-shadow;
+		blockquote {
+			border: none;
 
-  &#workshop {
-	background: #0a0;
-	height: 100px;
-  }
+			small {
+				color: #eef;
+				font-size: 1em;
+			}
 
-  &#articles {
-	background: #00a;
-	height: 100px;
-  }
+			p {
+				font-size: 1.5em;
 
-  &#writers {
-	background: #000;
-	height: 100px;
-  }
+				&::before, &::after {
+					color: #ccc;
+					font-size: 2em;
+					line-height: 0.1em;
+					vertical-align: -0.4em;
+				}
 
-  &#sign-up {
-	width: 100%;
-  }
+				&::before {
+					margin-right: 0.2em;
+					content: open-quote;
+				}
+
+				&::after {
+					margin-left: 0.2em;
+					content: close-quote;
+				}
+			}
+		}
+	}
+
+	.front {
+		background: white;
+		border: 1px solid #e1e8ed;
+		border-radius: 4px;
+		margin: 8px 0;
+
+		h5 {
+			border-bottom: 1px solid #e1e8ed;
+			padding: 0 12px;
+			padding-bottom: 8px;
+			color: #66757f;
+			font-weight: 300;
+
+			strong {
+				color: #292f33;
+			}
+		}
+		.form {
+			padding: 0 16px;
+		}
+	}
 }

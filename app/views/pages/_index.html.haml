@@ -1,22 +1,25 @@
-.row.table
-  .column#left
-    .promo#welcome
+.row#welcome
+  .col-md-8
+    = link_to 'Khayat', root_path, class: 'navbar-brand', id: 'logo'
+    .caption
       %blockquote
         %p
           Әгәр дә сез китаплар һәм шигырьләр укымасагыз, бу тормыштагы иң бәхетсез кеше булыр идегез
         %small
           Уолт Дисней
-    .promo.sm#fictions
-      Fictions
-    .promo.lg#workshop
-      Workshop
-    .promo.lg#articles
-      Articles
-    .promo.sm#writers
-      For writers
-  .column#right
-    .promo#sign-up
-      Please, Sign up or Login
-      = render 'devise/registrations/form'
+  .col-md-4
+    .front
+      %h5
+        %strong
+          Рәхим итегез
+      .form
+        = render 'devise/sessions/form'
+    .front
+      %h5
+        %strong
+          Хәяттә беренче тапкырмы?
+        Безгә кушылыгыз
+      .form
+        = render 'devise/registrations/form'
 
 
