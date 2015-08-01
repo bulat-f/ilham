@@ -30,5 +30,5 @@
                 %li= link_to t('.profile.signout'), destroy_user_session_path, method: :delete
           - else
             %li
-              = link_to '#', data: { toggle: 'modal', target: '#loginModal' }, style: 'font-weight: bolder' do
+              = link_to new_user_session_path, style: 'font-weight: bolder' do
                 = t('.signin')
