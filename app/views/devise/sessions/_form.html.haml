@@ -7,3 +7,5 @@
 
   .form-group
     = f.submit t('.submit'), class: 'btn btn-primary'
+    - if devise_mapping.recoverable?
+      = link_to t('.forgot-password'), new_password_path(resource_name)

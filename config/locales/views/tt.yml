@@ -31,11 +31,11 @@ tt:
     sessions:
       form:
         submit: Керергә
+        forgot-password: Парольне искә төшерү
     shared:
       links:
         signin: Керү
         sign-up: Теркәлү
-        forgot-password: Парольне искә төшерү
   articles:
     index:
       header: Аналитика, публицистика
