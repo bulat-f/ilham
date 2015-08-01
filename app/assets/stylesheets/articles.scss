@@ -10,8 +10,58 @@
 .article {
   padding-bottom: 16px;
   border-bottom: 1px solid #ccf;
-}
 
-.article .date {
-  margin: 0 8px;
+  a {
+    color: $gray-dark;
+
+    h1, h2, h3, h4 {
+      color: $gray-darker;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  ul.media-footer {
+    list-style: outside none none;
+    padding-top: 20px;
+    margin-left: -32px;
+    li {
+      display: inline;
+      margin-left: 32px;
+
+      &:before {
+        font-family: FontAwesome;
+        display: inline-block;
+        width: 1.2em;
+        margin-left: -1.2em;
+      }
+
+      &.date:before {
+        content: $fa-var-calendar;
+      }
+
+      &.source {
+        border-bottom: 1px dashed $gray;
+        display: inline;
+
+        &:hover {
+          color: $gray-base;
+          border-bottom: 1px dashed $gray-base;
+          a {
+            color: $gray-base;
+          }
+        }
+
+        &:before {
+          content: $fa-var-share;
+        }
+      }
+
+      &.author:before {
+        content: $fa-var-user;
+      }
+    }
+  }
 }

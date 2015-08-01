@@ -10,10 +10,10 @@
   = render 'shared/share'
 .row.prose
   = sanitize(@article.body, attributes: %w(class href))
-.row
-  %p.text-right
-    %strong= @article.author
-    %br
-    = @article.published_at
-    %br
-    = link_to_source @article
+.row.article
+  .col-md-offset-6.col-md-6
+    %ul.media-footer
+      %li.date= l @article.published_at, format: :long
+      - unless @article.source.blank?
+        %li.source= link_to @article.host, @article.source
+      %li.author= @article.author
