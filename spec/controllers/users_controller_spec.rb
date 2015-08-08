@@ -1,5 +1,4 @@
 require 'spec_helper'
 
-describe UsersController do
-
+RSpec.describe UsersController, type: :controller do
 end

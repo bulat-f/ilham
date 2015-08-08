@@ -1,4 +1,4 @@
 require 'spec_helper'
 
-describe Fiction do
+RSpec.describe Fiction, type: :model do
 end

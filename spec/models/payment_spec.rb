@@ -1,4 +1,4 @@
 require 'spec_helper'
 
-describe Payment do
+Rspec.describe Payment, type: :model do
 end

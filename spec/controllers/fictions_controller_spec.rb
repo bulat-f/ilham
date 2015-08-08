@@ -1,5 +1,4 @@
 require 'spec_helper'
 
-describe FictionsController do
-
+RSpec.describe FictionsController, type: :controller do
 end

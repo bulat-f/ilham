@@ -1,4 +1,4 @@
 require 'rails_helper'
 
-describe PagesController do
+RSpec.describe PagesController, type: :controller do
 end

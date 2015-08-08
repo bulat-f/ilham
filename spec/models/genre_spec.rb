@@ -1,4 +1,4 @@
 require 'spec_helper'
 
-describe Genre do
+RSpec.describe Genre, type: :model do
 end
