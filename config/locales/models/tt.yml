@@ -38,3 +38,11 @@ tt:
         source: Чыганак
       category:
         name: Категория исеме
+      payment:
+        id: Номер
+        sum: Сумма
+        profit: Табыш
+        status: Хәләт
+        payable_type: Нәрсә түләнде
+        created_at: Ясалу вакыты
+        updated_at: Үзгәртелү вакыты

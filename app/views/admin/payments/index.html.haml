@@ -1,0 +1,14 @@
+.page-header
+  %h1= "Түләүләр (#{Payment.count})"
+%table.table.table-hover
+  %thead
+    %tr
+      %td= Payment.human_attribute_name(:id)
+      %td= Payment.human_attribute_name(:sum)
+      %td= Payment.human_attribute_name(:profit)
+      %td= Payment.human_attribute_name(:created_at)
+      %td= Payment.human_attribute_name(:updated_at)
+      %td= Payment.human_attribute_name(:status)
+      %td= Payment.human_attribute_name(:payable_type)
+  %tbody
+    = render @payments

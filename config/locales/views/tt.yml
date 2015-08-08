@@ -4,6 +4,7 @@ tt:
       fictions: Әсәрләр
       posts: Уңыш остаханәсе
       articles: Аналитика, публицистика
+      admin: Администратор
       signin:  Керергә
       profile:
         label: Профиль
@@ -77,8 +78,8 @@ tt:
           users:
             heading: Кулланучылар
             footer: Исемлек
-          finances:
-            heading: Финанслар
+          payments:
+            heading: Түләүләр
             footer: Статитсика
     articles:
       new:

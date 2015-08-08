@@ -37,6 +37,8 @@ Rails.application.routes.draw do
         post 'publish'
       end
     end
+
+    resources :payments, only: [:index]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
