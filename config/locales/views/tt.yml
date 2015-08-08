@@ -66,13 +66,13 @@ tt:
   admin:
     dashboard:
       index:
-        title: Администратор булмэсе
+        title: Администратор булмәсе
         items:
           new-article:
-            heading: Яна мэкалэлэр
-            footer: Мэкалэ язырга
+            heading: Яңа мәкалэлэр
+            footer: Мәкалэ язарга
           unpublished-articles:
-            heading: Басылмаган мэкалэлэр
+            heading: Басылмаган мәкаләлэр
             footer: Бастрырырга
           users:
             heading: Кулланучылар
