@@ -31,7 +31,7 @@ tt:
     sessions:
       form:
         submit: Керергә
-        forgot-password: Парольне искә төшерү
+        forgot-password: Серсүзне искә төшерү
     shared:
       links:
         signin: Керү
