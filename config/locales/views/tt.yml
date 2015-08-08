@@ -70,10 +70,10 @@ tt:
         title: Администратор булмәсе
         items:
           new-article:
-            heading: Яңа мәкалэлэр
-            footer: Мәкалэ язарга
+            heading: Яңа мәкаләләр
+            footer: Мәкалә язарга
           unpublished-articles:
-            heading: Басылмаган мәкаләлэр
+            heading: Басылмаган мәкаләләр
             footer: Бастрырырга
           users:
             heading: Кулланучылар
