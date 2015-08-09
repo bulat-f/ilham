@@ -6,10 +6,4 @@
     = link_to article do
       %h4.media-heading= article.title
       %p= article.description
-    %ul.media-footer
-      - unless article.category.nil?
-        %li.category= article.category
-      %li.date= l article.published_at, format: :long
-      - unless article.source.blank?
-        %li.source= link_to article.host, article.source
-      %li.author= article.author
+    = article_footer article
