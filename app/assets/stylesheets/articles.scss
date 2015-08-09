@@ -38,6 +38,10 @@
         margin-left: -1.2em;
       }
 
+      &.category:before {
+        content: $fa-var-folder-open-o;
+      }
+
       &.date:before {
         content: $fa-var-calendar;
       }

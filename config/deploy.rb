@@ -5,7 +5,7 @@ set :repo_url, 'git@bitbucket.org:fatbulat/ilham.git'
 set :application, 'ilham'
 application = 'ilham'
 set :rvm_type, :user
-set :rvm_ruby_version, '2.1.2'
+set :rvm_ruby_version, '2.2.0'
 set :deploy_to, '/var/www/apps/ilham'
 set :rails_env, 'production'
 set :linked_dirs, %w(public/uploads)

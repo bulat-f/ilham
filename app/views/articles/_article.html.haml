@@ -5,10 +5,10 @@
   .media-body
     = link_to article do
       %h4.media-heading= article.title
-      - unless article.category.nil?
-        %span.label.label-primary= article.category
       %p= article.description
     %ul.media-footer
+      - unless article.category.nil?
+        %li.category= article.category
       %li.date= l article.published_at, format: :long
       - unless article.source.blank?
         %li.source= link_to article.host, article.source
