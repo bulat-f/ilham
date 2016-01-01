@@ -2,14 +2,13 @@
 - content_for :head do
   %meta{ property: 'og:description', content: truncate(strip_tags(@article.body), length: 128) }
   %meta{ name: 'description', content: truncate(strip_tags(@article.body), length: 128) }
-.row.center
-  .title
-    %h1= @article.title
-  .cover
-    = image_tag @article.picture, class: 'img-rounded center-block'
-  = render 'shared/share'
+.row
+  .article-cover
+    .cover{ style: "background-image: url(#{@article.picture})" }
+      .cover-inner
+        .align-bottom.center
+          %h1.headline= @article.title
+          = render 'shared/share'
+          = article_footer @article
 .row.prose
   = sanitize(@article.body, attributes: %w(class href))
-.row.article
-  .col-md-offset-5.col-md-7
-    = article_footer @article
