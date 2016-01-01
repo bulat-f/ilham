@@ -1,9 +1,10 @@
-.media.article
-  .media-left
-    = link_to article do
-      = image_tag article.picture.thumb.url.to_s, width: 256, class: 'media-object'
-  .media-body
-    = link_to article do
-      %h4.media-heading= article.title
-      %p= article.description
-    = article_footer article
+.article-card{ id: "id#{article.id}" }
+  .card{ style: "background-image: url(#{article.picture.thumb.url.to_s})" }
+    .card-inner
+      %span.category= article.category
+      .align-bottom
+        = link_to article_path(article) do
+          %h1.headline= article.title
+        %span.author= article.author
+        - unless article.source.blank?
+          = link_to article.host, article.source, class: 'source'
