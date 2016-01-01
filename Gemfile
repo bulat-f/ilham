@@ -48,6 +48,7 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano-bundler'
   gem 'capistrano-rvm'
+  gem 'capistrano-db-tasks', require: false
 
   gem 'byebug'
   gem 'web-console', '~> 2.0'

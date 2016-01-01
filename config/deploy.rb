@@ -1,6 +1,8 @@
 # config valid only for Capistrano 3.1
 lock '3.3.5'
 
+require 'capistrano-db-tasks'
+
 set :repo_url, 'git@bitbucket.org:fatbulat/ilham.git'
 set :application, 'ilham'
 application = 'ilham'
@@ -23,6 +25,19 @@ namespace :git do
     end
   end
 end
+
+set :db_local_clean, true
+set :db_remote_clean, true
+set :db_ignore_tables, []
+set :db_ignore_data_tables, []
+
+set :assets_dir, %w(public/assets public/att)
+set :local_assets_dir, %w(public/assets public/att)
+
+set :disallow_pushing, true
+
+set :compressor, :bzip2
+
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
