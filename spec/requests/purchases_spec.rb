@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Purchases', :type => :request do
+RSpec.describe 'Purchases', type: :request do
   let!(:user)    { FactoryGirl.create :user }
   let!(:fiction) { FactoryGirl.create :fiction }
   let(:buy_button) { I18n.t('fictions.actions.buy') }
@@ -16,7 +16,7 @@ RSpec.describe 'Purchases', :type => :request do
       before { click_button pay_button }
       context 'when click buy button' do
         it 'should change user purchases count', js: true do
-          expect{ click_button buy_button }.to change(user.purchases, :count)
+          expect { click_button buy_button }.to change(user.purchases, :count)
         end
 
         it 'should redirect to new payment path', js: true do

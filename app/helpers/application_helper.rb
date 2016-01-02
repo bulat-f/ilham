@@ -1,13 +1,12 @@
 module ApplicationHelper
-
   def full_title(title)
-    base = "Khayat"
+    base = 'Khayat'
     if title.blank?
       title = base
     else
-      title = base + " | " + title
+      title = base + ' | ' + title
     end
-    return title
+    title
   end
 
   def resource_name
@@ -39,5 +38,4 @@ module ApplicationHelper
     }
     Redcarpet::Markdown.new(renderer, options).render(text).html_safe
   end
-
 end

@@ -4,8 +4,6 @@ class Admin::AdminController < ApplicationController
   private
 
   def admin_user?
-    unless user_signed_in? && current_user.admin?
-      redirect_to root_path
-    end
+    redirect_to root_path unless user_signed_in? && current_user.admin?
   end
 end

@@ -17,7 +17,7 @@ class Post < ActiveRecord::Base
   end
 
   def similar(amount = 6)
-    target_tags = Tagging.select('post_id').where(tag_id: self.tags.map(&:id))
+    target_tags = Tagging.select('post_id').where(tag_id: tags.map(&:id))
     post_list = target_tags.group('post_id').order('count(*) desc').limit(amount + 1).map(&:post_id)
     Post.where('id in (?)', post_list) - [self]
   end

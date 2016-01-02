@@ -12,7 +12,7 @@ describe PaymentsController do
 
     describe 'when user do not signed in' do
       it 'should not change payments count' do
-        expect{ post :create, params }.not_to change(Payment, :count)
+        expect { post :create, params }.not_to change(Payment, :count)
       end
     end
 
@@ -23,11 +23,13 @@ describe PaymentsController do
 
       context 'and purchase not exist' do
         let(:next_purchase) { FactoryGirl.create :purchase, reader: user }
-        let(:next_params)   { { payment: { payable_id: next_purchase.id,
-                                           payable_type: 'Purchase' } } }
+        let(:next_params)   do
+          { payment: { payable_id: next_purchase.id,
+                       payable_type: 'Purchase' } }
+        end
         before { next_purchase.destroy }
         it 'should not change payment count' do
-          expect{ post :create, next_params }.not_to change(Payment, :count)
+          expect { post :create, next_params }.not_to change(Payment, :count)
         end
       end
 
@@ -36,13 +38,13 @@ describe PaymentsController do
           before { purchase.pay! }
 
           it 'should not change payments count' do
-            expect{ post :create, params }.not_to change(Payment, :count)
+            expect { post :create, params }.not_to change(Payment, :count)
           end
         end
 
         context 'without payed status' do
           it 'should change payments count' do
-            expect{ post :create, params }.to change(Payment, :count)
+            expect { post :create, params }.to change(Payment, :count)
           end
         end
 
@@ -55,21 +57,25 @@ describe PaymentsController do
       describe 'and the user is not the owner of the' do
         context 'purchase' do
           let(:alien_purchase) { FactoryGirl.create :purchase }
-          let(:alien_params)   { { payment: { payable_id: alien_purchase.id,
-                                              payable_type: 'Purchase' } } }
+          let(:alien_params)   do
+            { payment: { payable_id: alien_purchase.id,
+                         payable_type: 'Purchase' } }
+          end
 
           it 'should not change payments count' do
-            expect{ post :create, alien_params }.not_to change(Payment, :count)
+            expect { post :create, alien_params }.not_to change(Payment, :count)
           end
         end
 
         context 'gift' do
           let(:alien_gift)   { FactoryGirl.create :gift }
-          let(:alien_params) { { payment: { payable_id: alien_gift.id,
-                                            payable_type: 'Gift' } } }
+          let(:alien_params) do
+            { payment: { payable_id: alien_gift.id,
+                         payable_type: 'Gift' } }
+          end
 
           it 'should not change payments count' do
-            expect{ post :create, alien_params }.not_to change(Payment, :count)
+            expect { post :create, alien_params }.not_to change(Payment, :count)
           end
         end
       end
@@ -77,20 +83,28 @@ describe PaymentsController do
   end
 
   describe '#confirm' do
-    let(:purchase_payment) { FactoryGirl.create :purchase_payment,
-                             payable: purchase }
+    let(:purchase_payment) do
+      FactoryGirl.create :purchase_payment,
+                         payable: purchase
+    end
 
-    let(:gift_payment)     { FactoryGirl.create :gift_payment,
-                             payable: gift }
+    let(:gift_payment) do
+      FactoryGirl.create :gift_payment,
+                         payable: gift
+    end
 
     describe 'status is pay' do
-      let(:purchase_params) { { method: 'pay', params:
-                                { account: purchase_payment.id } } }
+      let(:purchase_params) do
+        { method: 'pay', params:
+                                { account: purchase_payment.id } }
+      end
 
-      let(:gift_params)     { { method: 'pay', params:
-                                { account: gift_payment.id } } }
+      let(:gift_params) do
+        { method: 'pay', params:
+                                { account: gift_payment.id } }
+      end
 
-      let(:json)            { { result: { message: 'Success' } }.to_json }
+      let(:json) { { result: { message: 'Success' } }.to_json }
 
       context 'user buys the fiction' do
         before do
@@ -115,13 +129,17 @@ describe PaymentsController do
     end
 
     describe 'status is check' do
-      let(:purchase_params) { { method: 'check', params:
-                                { account: purchase_payment.id } } }
+      let(:purchase_params) do
+        { method: 'check', params:
+                                { account: purchase_payment.id } }
+      end
 
-      let(:gift_params)     { { method: 'check', params:
-                                { account: gift_payment.id } } }
+      let(:gift_params) do
+        { method: 'check', params:
+                                { account: gift_payment.id } }
+      end
 
-      let(:json)            { { result: { message: 'Success' } }.to_json }
+      let(:json) { { result: { message: 'Success' } }.to_json }
 
       context 'user buys the fiction' do
         before do

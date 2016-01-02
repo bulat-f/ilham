@@ -1,5 +1,4 @@
 module EpisodesHelper
-
   def next_episode_link(episode)
     unless episode.next.nil?
       fiction_episode_path(episode.fiction, episode.next)

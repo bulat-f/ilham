@@ -1,5 +1,4 @@
 module FictionsHelper
-
   def first_episode_path(fiction)
     first = fiction.episodes.sort.first
     if first

@@ -1,5 +1,4 @@
 class PaymentsController < ApplicationController
-
   before_action :authenticate_user!, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
   def index
@@ -17,8 +16,8 @@ class PaymentsController < ApplicationController
     payable = @payment.payable
     if payable && payable.pay_available_for?(current_user) && @payment.save!
       @payment.update_attribute(:sum, payable.price)
-      redirect_to "https://unitpay.ru/pay/9133-38f19?sum=#{ @payment.sum }&
-                   account=#{ @payment.id }&
+      redirect_to "https://unitpay.ru/pay/9133-38f19?sum=#{@payment.sum}&
+                   account=#{@payment.id}&
                    desc=Purchase+of+a+literary+work&hideDesc=true&"
     else
       redirect_to root_path
@@ -59,7 +58,7 @@ class PaymentsController < ApplicationController
   end
 
   def error_message(msg)
-    { json: { error: { code: -32000, message: msg } } }
+    { json: { error: { code: -32_000, message: msg } } }
   end
 
   def success_message(msg)

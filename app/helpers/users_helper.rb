@@ -1,5 +1,4 @@
 module UsersHelper
-
   def admin_user
     unless current_user.admin?
       flash[:warning] = t('flash.user.not_admin')

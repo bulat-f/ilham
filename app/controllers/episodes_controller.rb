@@ -1,5 +1,4 @@
 class EpisodesController < ApplicationController
-
   before_action :authenticate_user!, only: [:show, :new, :create, :edit, :update, :destroy]
   before_action :admin_user,         only: [:new, :create, :edit, :update, :destroy]
 
@@ -46,7 +45,7 @@ class EpisodesController < ApplicationController
   def destroy
     show_episode = @episode.next || @episode.prev
     @episode.destroy
-    flash[:success] = "Episode destroyed"
+    flash[:success] = 'Episode destroyed'
     if show_episode
       redirect_to [@fiction, show_episode]
     else

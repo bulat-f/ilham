@@ -1,5 +1,4 @@
 class Genre < ActiveRecord::Base
-
   has_many :fictions
 
   def to_s

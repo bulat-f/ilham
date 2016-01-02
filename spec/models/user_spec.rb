@@ -39,11 +39,11 @@ describe User do
     let(:user) { FactoryGirl.create :user }
 
     context 'ActiveRecord object as argument' do
-      it { expect{ user.buy!(fiction) }.to change(user.purchases, :count) }
+      it { expect { user.buy!(fiction) }.to change(user.purchases, :count) }
     end
 
     context 'Fixnum as argument' do
-      it { expect{ user.buy!(fiction.id) }.to change(user.purchases, :count) }
+      it { expect { user.buy!(fiction.id) }.to change(user.purchases, :count) }
     end
   end
 

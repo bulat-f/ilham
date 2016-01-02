@@ -1,12 +1,11 @@
 class UsersController < ApplicationController
-
   before_action :authenticate_user!, only: [:index, :statistic, :lib]
   before_action :writer_user,        only: [:statistic]
   before_action :admin_user,         only: [:index]
   before_action :current_user?,      only: [:statistic]
 
   def index
-    @users = User.order(:created_at => :desc).all
+    @users = User.order(created_at: :desc).all
   end
 
   def show

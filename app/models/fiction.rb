@@ -1,5 +1,4 @@
 class Fiction < ActiveRecord::Base
-
   validates :title, :body, presence: true
   validates :price, numericality: { greater_than_or_equal_to: 0.01 }
 
@@ -15,7 +14,7 @@ class Fiction < ActiveRecord::Base
 
   mount_uploader :cover, CoverUploader
 
-  default_scope { order(:created_at => :desc) }
+  default_scope { order(created_at: :desc) }
 
   def to_s
     title

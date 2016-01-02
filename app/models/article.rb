@@ -6,7 +6,7 @@ class Article < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
 
-  default_scope { order(:created_at => :desc) }
+  default_scope { order(created_at: :desc) }
 
   scope :published,   -> { where(published: true) }
   scope :unpublished, -> { where(published: false) }
@@ -30,7 +30,7 @@ class Article < ActiveRecord::Base
 
   def publish
     self.published = true
-    self.save
+    save
   end
 
   def published_at

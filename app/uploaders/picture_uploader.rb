@@ -1,7 +1,6 @@
 # encoding: utf-8
 
 class PictureUploader < CarrierWave::Uploader::Base
-
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
@@ -18,7 +17,7 @@ class PictureUploader < CarrierWave::Uploader::Base
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url
-    [version_name, "default.jpg"].compact.join('_')
+    [version_name, 'default.jpg'].compact.join('_')
   end
 
   # Process files as they are uploaded:
@@ -48,5 +47,4 @@ class PictureUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-
 end

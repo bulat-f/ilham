@@ -1,5 +1,4 @@
 class FictionsController < ApplicationController
-
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :admin_user,         only: [:new, :create, :edit, :update, :destroy]
 
@@ -50,7 +49,7 @@ class FictionsController < ApplicationController
 
   def destroy
     @fiction.destroy
-    flash[:success] = "Fiction destroyed"
+    flash[:success] = 'Fiction destroyed'
     redirect_to fictions_path
   end
 
