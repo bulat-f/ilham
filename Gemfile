@@ -41,7 +41,6 @@ group :test do
 end
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'rspec-rails'
 
   gem 'capistrano'
@@ -54,9 +53,7 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
 end
 
-group :production do
-  gem 'pg'
-end
+gem 'pg'
 
 gem 'font-awesome-sass'
 
