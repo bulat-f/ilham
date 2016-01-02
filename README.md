@@ -1,7 +1,7 @@
-Ilham (khayat.ru)
-=================
+Ilham
+=====
 
-Это веб-приложение на татрском языке, основная задача которого -- дать возможность читать литературные произведения (после оплаты).Так же имеются вспомогательные разделы сайта.
+[![Code Climate](https://codeclimate.com/github/fatbulat/ilham/badges/gpa.svg)](https://codeclimate.com/github/fatbulat/ilham)
 
 ###TODO LIST
 1. Articles in user page (profile)
