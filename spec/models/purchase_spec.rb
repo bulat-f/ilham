@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
-Rspec.describe Purchase, type: :model do
+RSpec.describe Purchase, type: :model do
 end

@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
-Rspec.describe Payment, type: :model do
+RSpec.describe Payment, type: :model do
 end

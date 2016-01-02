@@ -2,6 +2,7 @@ Ilham
 =====
 
 [![Code Climate](https://codeclimate.com/github/fatbulat/ilham/badges/gpa.svg)](https://codeclimate.com/github/fatbulat/ilham)
+[![Build Status](https://travis-ci.org/fatbulat/ilham.svg)](https://travis-ci.org/fatbulat/ilham)
 
 ###TODO LIST
 1. Articles in user page (profile)
